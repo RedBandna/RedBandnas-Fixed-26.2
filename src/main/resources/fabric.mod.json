@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "rbfixed",
+	"version": "${version}",
+	"name": "RedBandna's Fixed",
+	"description": "This mod aims mainly to improve the survival experience of Minecraft",
+	"authors": [
+		"RedBandna"
+	],
+	"contact": {
+		"homepage": "https://redbandna.net/",
+		"sources": ""
+	},
+	"license": "MIT-License",
+	"icon": "assets/rbfixed/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.redbandna.fixed.RedBandnaSFixed"
+		],
+		"fabric-datagen": [
+			"net.redbandna.fixed.RedBandnaSFixedDataGenerator"
+		]
+	},
+	"mixins": [
+		"rbfixed.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
