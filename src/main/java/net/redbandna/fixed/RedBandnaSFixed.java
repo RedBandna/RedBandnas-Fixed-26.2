@@ -4,6 +4,9 @@ import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
 
+import net.redbandna.fixed.block.ModBlocks;
+import net.redbandna.fixed.creativemodetab.ModCreativeModeTabs;
+import net.redbandna.fixed.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +17,9 @@ public class RedBandnaSFixed implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		ModCreativeModeTabs.registerModCreativeModeTabs();
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 
 	public static Identifier id(String path) {

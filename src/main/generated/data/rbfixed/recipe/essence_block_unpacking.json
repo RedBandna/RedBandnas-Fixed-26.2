@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "pure_void_essence",
+  "ingredients": [
+    "rbfixed:void_essence_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "rbfixed:pure_void_essence"
+  }
+}

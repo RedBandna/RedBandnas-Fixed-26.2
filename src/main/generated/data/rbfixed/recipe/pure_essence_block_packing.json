@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "pure_void_essence_block",
+  "key": {
+    "#": "rbfixed:void_essence_block"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "rbfixed:pure_void_essence_block"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "item.rbfixed.void_essence": "Void Essence",
+  "item.rbfixed.pure_void_essence": "Pure Void Essence",
+  "item.rbfixed.void_amethyst_shard": "Void Amethyst Shard",
+  "item.rbfixed.void_copper_ingot": "Void Copper Ingot",
+  "item.rbfixed.void_diamond": "Void Diamond",
+  "item.rbfixed.void_emerald": "Void Emerald",
+  "item.rbfixed.void_gold_ingot": "Void Gold Ingot",
+  "item.rbfixed.void_iron_ingot": "Void Iron Ingot",
+  "item.rbfixed.void_lapis_lazuli": "Void Lapis Lazuli",
+  "item.rbfixed.void_redstone": "Void Redstone",
+
+  "block.rbfixed.void_essence_ore": "Void Essence Ore",
+  "block.rbfixed.void_essence_block": "Block of Void Essence",
+  "block.rbfixed.pure_void_essence_block": "Block of Pure Void Essence",
+
+  "creativemodetab.rbfixed.end_items": "End Items",
+  "creativemodetab.rbfixed.end_blocks": "End Blocks"
+}

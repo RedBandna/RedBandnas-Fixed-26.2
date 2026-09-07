@@ -1,0 +1,4 @@
+// 26.2	-999999999-01-01T00:00:00	RedBandna's Fixed/Block Loot Tables
+394383fdd63212f9c8f7ec696f7b9d061bda66dc data/rbfixed/loot_table/blocks/pure_void_essence_block.json
+6bd4eee35441347b31f11c942a76488ec416258b data/rbfixed/loot_table/blocks/void_essence_block.json
+0f96337d9e3af2bf9ec674d4ef2ec793dc171cb7 data/rbfixed/loot_table/blocks/void_essence_ore.json

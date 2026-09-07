@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "experience": 0.3,
+  "group": "void_essence",
+  "ingredient": "rbfixed:void_essence_ore",
+  "result": {
+    "id": "rbfixed:void_essence"
+  }
+}

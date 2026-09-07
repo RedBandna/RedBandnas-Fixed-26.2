@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "rbfixed:block/pure_void_essence_block"
+    }
+  }
+}

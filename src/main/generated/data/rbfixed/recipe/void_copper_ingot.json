@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "void_minerals",
+  "ingredients": [
+    "rbfixed:pure_void_essence",
+    "rbfixed:pure_void_essence",
+    "rbfixed:pure_void_essence",
+    "rbfixed:pure_void_essence",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot"
+  ],
+  "result": {
+    "id": "rbfixed:void_copper_ingot"
+  }
+}
