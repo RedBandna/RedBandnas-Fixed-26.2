@@ -1,14 +1,13 @@
 package net.redbandna.fixed.item;
 
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.redbandna.fixed.RedBandnaSFixed;
+import net.redbandna.fixed.item.custom.TrowelItem;
 
 import java.util.function.Function;
 
@@ -24,6 +23,8 @@ public class ModItems {
     public static final Item VOID_IRON_INGOT = registerItem("void_iron_ingot", Item::new);
     public static final Item VOID_LAPIS_LAZULI = registerItem("void_lapis_lazuli", Item::new);
     public static final Item VOID_REDSTONE = registerItem("void_redstone", Item::new);
+
+    public static final Item Trowel = registerItem("trowel", properties -> new TrowelItem(properties.durability(256)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name),

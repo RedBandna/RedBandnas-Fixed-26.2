@@ -32,5 +32,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.VOID_IRON_INGOT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.VOID_LAPIS_LAZULI, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.VOID_REDSTONE, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(ModItems.Trowel, ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 }

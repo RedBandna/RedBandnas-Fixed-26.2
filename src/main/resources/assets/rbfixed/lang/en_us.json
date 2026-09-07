@@ -10,10 +10,13 @@
   "item.rbfixed.void_lapis_lazuli": "Void Lapis Lazuli",
   "item.rbfixed.void_redstone": "Void Redstone",
 
+  "item.rbfixed.trowel": "Trowel",
+
   "block.rbfixed.void_essence_ore": "Void Essence Ore",
   "block.rbfixed.void_essence_block": "Block of Void Essence",
   "block.rbfixed.pure_void_essence_block": "Block of Pure Void Essence",
 
   "creativemodetab.rbfixed.end_items": "End Items",
-  "creativemodetab.rbfixed.end_blocks": "End Blocks"
+  "creativemodetab.rbfixed.end_blocks": "End Blocks",
+  "creativemodetab.rbfixed.mod_misc": "Miscellaneous Mod Items"
 }

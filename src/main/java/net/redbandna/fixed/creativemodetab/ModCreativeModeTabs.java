@@ -40,6 +40,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PURE_VOID_ESSENCE_BLOCK);
                     }).build());
 
+    public static final CreativeModeTab MISC_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "mod_misc"),
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.Trowel))
+                    .title(Component.translatable("creativemodetab.rbfixed.mod_misc"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.Trowel);
+                    }).build());
+
     public static void registerModCreativeModeTabs() {
         RedBandnaSFixed.LOGGER.info("Registering Creative Mode Tabs for " + RedBandnaSFixed.MOD_ID);
     }
