@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
 
@@ -42,6 +43,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 BuildVoidMineralRecipe(ModItems.VOID_IRON_INGOT, Items.IRON_INGOT, output);
                 BuildVoidMineralRecipe(ModItems.VOID_LAPIS_LAZULI, Items.LAPIS_LAZULI, output);
                 BuildVoidMineralRecipe(ModItems.VOID_REDSTONE, Items.REDSTONE, output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.Trowel)
+                        .pattern(" C")
+                        .pattern("CS")
+                        .pattern(" S")
+                        .define('C', Blocks.COBBLESTONE)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(Blocks.COBBLESTONE), has(Blocks.COBBLESTONE))
+                        .save(output);
 
             }
 
