@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:cyan_dye",
+    "minecraft:cyan_dye",
+    "minecraft:cyan_dye",
+    "minecraft:cyan_dye",
+    "minecraft:cyan_dye",
+    "minecraft:cyan_dye",
+    "minecraft:cyan_dye",
+    "minecraft:cyan_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:cyan_paint_brush"
+  }
+}

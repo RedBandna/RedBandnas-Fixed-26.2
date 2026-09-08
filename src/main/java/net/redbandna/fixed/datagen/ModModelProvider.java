@@ -5,8 +5,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.world.item.Items;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
+import net.redbandna.fixed.item.custom.PaintBrushItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
@@ -34,5 +37,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.VOID_REDSTONE, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(ModItems.Trowel, ModelTemplates.FLAT_HANDHELD_ITEM);
+        ModItems.PAINT_BRUSH.forEach(paint_brush -> {
+            itemModelGenerators.generateFlatItem(paint_brush, ModelTemplates.FLAT_HANDHELD_ITEM);
+        });
     }
 }

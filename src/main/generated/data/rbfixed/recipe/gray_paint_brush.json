@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:gray_dye",
+    "minecraft:gray_dye",
+    "minecraft:gray_dye",
+    "minecraft:gray_dye",
+    "minecraft:gray_dye",
+    "minecraft:gray_dye",
+    "minecraft:gray_dye",
+    "minecraft:gray_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:gray_paint_brush"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:white_dye",
+    "minecraft:white_dye",
+    "minecraft:white_dye",
+    "minecraft:white_dye",
+    "minecraft:white_dye",
+    "minecraft:white_dye",
+    "minecraft:white_dye",
+    "minecraft:white_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:white_paint_brush"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:purple_dye",
+    "minecraft:purple_dye",
+    "minecraft:purple_dye",
+    "minecraft:purple_dye",
+    "minecraft:purple_dye",
+    "minecraft:purple_dye",
+    "minecraft:purple_dye",
+    "minecraft:purple_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:purple_paint_brush"
+  }
+}

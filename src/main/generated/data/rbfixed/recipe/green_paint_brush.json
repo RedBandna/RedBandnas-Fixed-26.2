@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:green_dye",
+    "minecraft:green_dye",
+    "minecraft:green_dye",
+    "minecraft:green_dye",
+    "minecraft:green_dye",
+    "minecraft:green_dye",
+    "minecraft:green_dye",
+    "minecraft:green_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:green_paint_brush"
+  }
+}

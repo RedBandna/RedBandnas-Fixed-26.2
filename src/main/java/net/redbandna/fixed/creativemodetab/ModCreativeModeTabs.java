@@ -3,13 +3,16 @@ package net.redbandna.fixed.creativemodetab;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
+import net.redbandna.fixed.item.custom.PaintBrushItem;
 
 public class ModCreativeModeTabs {
 
@@ -46,6 +49,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativemodetab.rbfixed.mod_misc"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.Trowel);
+                        ModItems.PAINT_BRUSH.forEach(output::accept);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "rbfixed:item/orange_paint_brush"
+  }
+}

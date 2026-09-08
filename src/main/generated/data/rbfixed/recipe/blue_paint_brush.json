@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:blue_dye",
+    "minecraft:blue_dye",
+    "minecraft:blue_dye",
+    "minecraft:blue_dye",
+    "minecraft:blue_dye",
+    "minecraft:blue_dye",
+    "minecraft:blue_dye",
+    "minecraft:blue_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:blue_paint_brush"
+  }
+}

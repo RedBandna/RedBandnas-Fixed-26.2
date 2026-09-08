@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "minecraft:lime_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:lime_paint_brush"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:orange_dye",
+    "minecraft:orange_dye",
+    "minecraft:orange_dye",
+    "minecraft:orange_dye",
+    "minecraft:orange_dye",
+    "minecraft:orange_dye",
+    "minecraft:orange_dye",
+    "minecraft:orange_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:orange_paint_brush"
+  }
+}

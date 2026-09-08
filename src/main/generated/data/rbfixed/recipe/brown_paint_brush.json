@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:brown_dye",
+    "minecraft:brown_dye",
+    "minecraft:brown_dye",
+    "minecraft:brown_dye",
+    "minecraft:brown_dye",
+    "minecraft:brown_dye",
+    "minecraft:brown_dye",
+    "minecraft:brown_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:brown_paint_brush"
+  }
+}

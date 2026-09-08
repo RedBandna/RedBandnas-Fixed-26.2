@@ -12,6 +12,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
+import net.redbandna.fixed.item.custom.PaintBrushItem;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -53,6 +54,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Blocks.COBBLESTONE), has(Blocks.COBBLESTONE))
                         .save(output);
 
+                ModItems.PAINT_BRUSH.forEach(paint_brush -> {
+                    shapeless(RecipeCategory.TOOLS, paint_brush)
+                            .requires(Items.DYE.pick(((PaintBrushItem)paint_brush).dyeColor), 8)
+                            .requires(Items.BRUSH)
+                            .unlockedBy(getHasName(Items.BRUSH), has(Items.BRUSH))
+                            .group("paint_brushes")
+                            .save(output);
+                });
             }
 
             public void BuildVoidMineralRecipe(ItemLike void_mineral, ItemLike mineral, RecipeOutput output) {

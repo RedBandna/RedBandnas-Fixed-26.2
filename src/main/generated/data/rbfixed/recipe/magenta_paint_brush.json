@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:magenta_dye",
+    "minecraft:magenta_dye",
+    "minecraft:magenta_dye",
+    "minecraft:magenta_dye",
+    "minecraft:magenta_dye",
+    "minecraft:magenta_dye",
+    "minecraft:magenta_dye",
+    "minecraft:magenta_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:magenta_paint_brush"
+  }
+}

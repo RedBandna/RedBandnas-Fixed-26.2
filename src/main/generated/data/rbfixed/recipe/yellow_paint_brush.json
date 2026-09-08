@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:yellow_dye",
+    "minecraft:yellow_dye",
+    "minecraft:yellow_dye",
+    "minecraft:yellow_dye",
+    "minecraft:yellow_dye",
+    "minecraft:yellow_dye",
+    "minecraft:yellow_dye",
+    "minecraft:yellow_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:yellow_paint_brush"
+  }
+}

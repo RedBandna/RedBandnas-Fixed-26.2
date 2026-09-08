@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "paint_brushes",
+  "ingredients": [
+    "minecraft:pink_dye",
+    "minecraft:pink_dye",
+    "minecraft:pink_dye",
+    "minecraft:pink_dye",
+    "minecraft:pink_dye",
+    "minecraft:pink_dye",
+    "minecraft:pink_dye",
+    "minecraft:pink_dye",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "rbfixed:pink_paint_brush"
+  }
+}
