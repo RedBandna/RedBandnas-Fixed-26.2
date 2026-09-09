@@ -82,25 +82,27 @@ public class EndRelayBlock extends BaseEntityBlock {
                 }
             } else if (itemStack.getItem().equals(Items.ENDER_PEARL) && !player.getCooldowns().isOnCooldown(itemStack)) {
 
-                if (endRelayBlockEntity.destination != null) {
+                if (endRelayBlockEntity.destination != null && AllowedDimensions.contains(endRelayBlockEntity.destination.dimension())) {
                     BlockPos target = endRelayBlockEntity.destination.pos().above();
                     if (!level.isClientSide()) {
                         ServerLevel targetLevel = level.getServer().getLevel(endRelayBlockEntity.destination.dimension());
-                        if (DismountHelper.canDismountTo(targetLevel, Vec3.atLowerCornerOf(target), player, Pose.STANDING))
+                        if (DismountHelper.canDismountTo(targetLevel, Vec3.atLowerCornerOf(target), player, Pose.STANDING)) {
                             player.teleportTo(targetLevel, target.getX(), target.getY(), target.getZ(), Set.of(), 0, 0, true);
+
+                            if (!player.isCreative()) itemStack.shrink(1);
+                            player.getCooldowns().addCooldown(player.getCooldowns().getCooldownGroup(itemStack), 20);
+
+                            level.playSound(null, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS);
+                            level.playSound(null, target, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS);
+                        }
+                        else level.playSound(null, pos, SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), SoundSource.BLOCKS);
+
+                        return InteractionResult.SUCCESS;
                     }
-
-                    itemStack.shrink(1);
-                    player.getCooldowns().addCooldown(player.getCooldowns().getCooldownGroup(itemStack), 1);
-
-                    level.playSound(player, pos, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS);
-                    level.playSound(player, target, SoundEvents.ENDERMAN_TELEPORT, SoundSource.BLOCKS);
-                    return InteractionResult.SUCCESS;
-                } else {
-
-                    level.playSound(player, pos, SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), SoundSource.BLOCKS);
-                    return InteractionResult.SUCCESS;
                 }
+
+                level.playSound(player, pos, SoundEvents.EMPTY, SoundSource.BLOCKS);
+                return InteractionResult.SUCCESS;
             }
         }
         return  InteractionResult.PASS;
