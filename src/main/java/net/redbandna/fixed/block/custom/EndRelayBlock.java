@@ -86,8 +86,8 @@ public class EndRelayBlock extends BaseEntityBlock {
                     BlockPos target = endRelayBlockEntity.destination.pos().above();
                     if (!level.isClientSide()) {
                         ServerLevel targetLevel = level.getServer().getLevel(endRelayBlockEntity.destination.dimension());
-                        if (DismountHelper.canDismountTo(targetLevel, Vec3.atLowerCornerOf(target), player, Pose.STANDING)) {
-                            player.teleportTo(targetLevel, target.getX(), target.getY(), target.getZ(), Set.of(), 0, 0, true);
+                        if (DismountHelper.canDismountTo(targetLevel, Vec3.atCenterOf(target), player, Pose.STANDING)) {
+                            player.teleportTo(targetLevel, target.getX() + 0.5, target.getY(), target.getZ() + 0.5, Set.of(), 0, 0, true);
 
                             if (!player.isCreative()) itemStack.shrink(1);
                             player.getCooldowns().addCooldown(player.getCooldowns().getCooldownGroup(itemStack), 20);
