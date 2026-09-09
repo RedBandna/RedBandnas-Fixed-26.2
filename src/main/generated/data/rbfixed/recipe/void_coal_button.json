@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "void_buttons",
+  "ingredients": [
+    "rbfixed:void_coal"
+  ],
+  "result": {
+    "id": "rbfixed:void_coal_button"
+  }
+}

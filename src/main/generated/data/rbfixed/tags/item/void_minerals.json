@@ -1,0 +1,15 @@
+{
+  "values": [
+    "rbfixed:void_amethyst_shard",
+    "rbfixed:void_coal",
+    "rbfixed:void_copper_ingot",
+    "rbfixed:void_diamond",
+    "rbfixed:void_emerald",
+    "rbfixed:void_gold_ingot",
+    "rbfixed:void_iron_ingot",
+    "rbfixed:void_lapis_lazuli",
+    "rbfixed:void_netherite_scrap",
+    "rbfixed:void_quartz",
+    "rbfixed:void_redstone"
+  ]
+}

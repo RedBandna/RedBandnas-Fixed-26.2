@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "rbfixed:block/void_quartz_button_inventory"
+  }
+}

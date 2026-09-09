@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rbfixed:void_essence_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_void_essence_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rbfixed:void_essence_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_void_essence_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rbfixed:void_essence_slab"
+    ]
+  }
+}

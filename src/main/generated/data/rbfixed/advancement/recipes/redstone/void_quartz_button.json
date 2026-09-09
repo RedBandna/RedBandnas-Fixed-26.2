@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rbfixed:void_quartz_button"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_void_quartz": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rbfixed:void_quartz"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_void_quartz"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rbfixed:void_quartz_button"
+    ]
+  }
+}

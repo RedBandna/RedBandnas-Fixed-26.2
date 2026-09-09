@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "rbfixed:void_essence_block"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "rbfixed:void_essence_pressure_plate"
+  }
+}

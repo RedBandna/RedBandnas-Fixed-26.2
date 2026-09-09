@@ -64,23 +64,22 @@ public class PaintBrushItem extends BrushItem {
                         if (level instanceof ServerLevel serverLevel) {
 
                             BlockState blockState = serverLevel.getBlockState(pos);
-                            if (blockState.getBlock().equals(collection.get().pick(dyeColor))) {
+                            Block dyed_block = collection.get().pick(dyeColor);
+                            if (blockState.getBlock().equals(dyed_block)) {
                                 return;
                             }
 
                             if(collection.get().equals(Blocks.BED)) {
-                                if (blockState.getValue(BlockStateProperties.BED_PART).equals(BedPart.FOOT)) {
-                                    BlockPos headPos = pos.relative(blockState.getValue(BlockStateProperties.HORIZONTAL_FACING), 1);
-                                    serverLevel.setBlock(headPos, Blocks.AIR.defaultBlockState(), 35);
-                                    serverLevel.setBlock(headPos, collection.get().pick(dyeColor).withPropertiesOf(blockState.setValue(BlockStateProperties.BED_PART, BedPart.HEAD)), 3);
-                                    serverLevel.setBlock(pos, collection.get().pick(dyeColor).withPropertiesOf(blockState), 3);
-                                }
-                                else {
-                                    BlockPos footPos = pos.relative(blockState.getValue(BlockStateProperties.HORIZONTAL_FACING), -1);
-                                    serverLevel.setBlock(pos, Blocks.AIR.defaultBlockState(), 35);
-                                    serverLevel.setBlock(pos, collection.get().pick(dyeColor).withPropertiesOf(blockState), 3);
-                                    serverLevel.setBlock(footPos, collection.get().pick(dyeColor).withPropertiesOf(blockState.setValue(BlockStateProperties.BED_PART, BedPart.FOOT)), 3);
-                                }
+                                BlockPos headPos;
+                                BlockPos footPos;
+                                if (blockState.getValue(BlockStateProperties.BED_PART).equals(BedPart.FOOT))
+                                    headPos = (footPos = pos).relative(blockState.getValue(BlockStateProperties.HORIZONTAL_FACING), 1);
+                                else footPos = (headPos = pos).relative(blockState.getValue(BlockStateProperties.HORIZONTAL_FACING), -1);
+
+                                serverLevel.setBlock(headPos, dyed_block.withPropertiesOf(blockState.setValue(BlockStateProperties.BED_PART, BedPart.HEAD)), 51);
+                                serverLevel.setBlock(footPos, dyed_block.withPropertiesOf(blockState.setValue(BlockStateProperties.BED_PART, BedPart.FOOT)), 3);
+                                dyed_block.withPropertiesOf(blockState.setValue(BlockStateProperties.BED_PART, BedPart.HEAD)).updateNeighbourShapes(serverLevel, headPos, 3);
+
                             }
 
                             else if (collection.get().equals(Blocks.DYED_SHULKER_BOX)) {

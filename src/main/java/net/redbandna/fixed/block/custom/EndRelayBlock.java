@@ -55,6 +55,7 @@ public class EndRelayBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof EndRelayBlockEntity endRelayBlockEntity) {
+            level.removeBlock(pos, false);
 
             if (!AllowedDimensions.contains(level.dimension())) {
                 ExplosionDamageCalculator damageCalculator = new ExplosionDamageCalculator() {

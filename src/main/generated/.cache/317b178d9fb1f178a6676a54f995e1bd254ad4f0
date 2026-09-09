@@ -1,4 +1,11 @@
 // 26.2	-999999999-01-01T00:00:00	RedBandna's Fixed/Tags for minecraft:block
-b0b3501d538feea17ec5e8fd04e22f1d2aff0766 data/minecraft/tags/block/dragon_immune.json
-9ee0b2236c93f418a59cbe3cae89492beb5e631f data/minecraft/tags/block/mineable/pickaxe.json
-9ee0b2236c93f418a59cbe3cae89492beb5e631f data/minecraft/tags/block/needs_diamond_tool.json
+5b4817e9807c1d8ef23948cdf6da3a63e06c5382 data/minecraft/tags/block/buttons.json
+1abb5faae742b3a71abddbee22993381a45adf49 data/minecraft/tags/block/doors.json
+3361db06467d7d5647ab0eb350b9c61b582aade0 data/minecraft/tags/block/dragon_immune.json
+4d4fd097d6e5f7f257e2981b2a8b850169de96fb data/minecraft/tags/block/mineable/pickaxe.json
+4d4fd097d6e5f7f257e2981b2a8b850169de96fb data/minecraft/tags/block/needs_diamond_tool.json
+3e332ba16a3edbf7f9f70bd8954fc8f6ee2632f4 data/minecraft/tags/block/pressure_plates.json
+9b7b47ae5b00cd32a910b806408bccbb4cefef90 data/minecraft/tags/block/slabs.json
+ae422fe372df1e9246eb0fe96aeb840112e70eee data/minecraft/tags/block/stairs.json
+975f24dd5d05e201337c16bb3f5101467ea16c0a data/minecraft/tags/block/trapdoors.json
+3f82b8e2e5d9ab7b314b88eed5f344f8361ed8ac data/rbfixed/tags/block/void_buttons.json

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "rbfixed:block/void_lapis_button"
+  }
+}

@@ -3,6 +3,22 @@
     "rbfixed:void_essence_ore",
     "rbfixed:void_essence_block",
     "rbfixed:pure_void_essence_block",
-    "rbfixed:end_relay"
+    "rbfixed:end_relay",
+    "rbfixed:void_essence_stairs",
+    "rbfixed:void_essence_slab",
+    "rbfixed:void_essence_pressure_plate",
+    "rbfixed:void_essence_door",
+    "rbfixed:void_essence_trapdoor",
+    "rbfixed:void_amethyst_button",
+    "rbfixed:void_coal_button",
+    "rbfixed:void_copper_button",
+    "rbfixed:void_diamond_button",
+    "rbfixed:void_emerald_button",
+    "rbfixed:void_gold_button",
+    "rbfixed:void_iron_button",
+    "rbfixed:void_lapis_button",
+    "rbfixed:void_netherite_button",
+    "rbfixed:void_quartz_button",
+    "rbfixed:void_redstone_button"
   ]
 }

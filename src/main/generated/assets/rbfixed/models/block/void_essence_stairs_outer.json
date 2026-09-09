@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "rbfixed:block/void_essence_block",
+    "side": "rbfixed:block/void_essence_block",
+    "top": "rbfixed:block/void_essence_block"
+  }
+}

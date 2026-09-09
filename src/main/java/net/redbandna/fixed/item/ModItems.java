@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.BundleContents;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColorCollection;
 import net.redbandna.fixed.RedBandnaSFixed;
@@ -26,13 +27,18 @@ public class ModItems {
     public static final Item VOID_ESSENCE = registerItem("void_essence", Item::new);
     public static final Item PURE_VOID_ESSENCE = registerItem("pure_void_essence", Item::new);
     public static final Item VOID_AMETHYST_SHARD = registerItem("void_amethyst_shard", Item::new);
+    public static final Item VOID_COAL = registerItem("void_coal", Item::new);
     public static final Item VOID_COPPER_INGOT = registerItem("void_copper_ingot", Item::new);
     public static final Item VOID_DIAMOND = registerItem("void_diamond", Item::new);
     public static final Item VOID_EMERALD = registerItem("void_emerald", Item::new);
     public static final Item VOID_GOLD_INGOT = registerItem("void_gold_ingot", Item::new);
     public static final Item VOID_IRON_INGOT = registerItem("void_iron_ingot", Item::new);
     public static final Item VOID_LAPIS_LAZULI = registerItem("void_lapis_lazuli", Item::new);
+    public static final Item VOID_NETHERITE_SCRAP = registerItem("void_netherite_scrap", Item::new);
+    public static final Item VOID_QUARTZ = registerItem("void_quartz", Item::new);
     public static final Item VOID_REDSTONE = registerItem("void_redstone", Item::new);
+    public static final List<Item> VOID_MINERALS = List.of(VOID_AMETHYST_SHARD, VOID_COAL, VOID_COPPER_INGOT, VOID_DIAMOND, VOID_EMERALD,
+            VOID_GOLD_INGOT, VOID_IRON_INGOT, VOID_LAPIS_LAZULI, VOID_NETHERITE_SCRAP, VOID_QUARTZ, VOID_REDSTONE);
 
     public static final Item Trowel = registerItem("trowel", properties -> new TrowelItem(properties.durability(320)));
 

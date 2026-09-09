@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rbfixed:void_amethyst_button"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_void_amethyst_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rbfixed:void_amethyst_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_void_amethyst_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rbfixed:void_amethyst_button"
+    ]
+  }
+}

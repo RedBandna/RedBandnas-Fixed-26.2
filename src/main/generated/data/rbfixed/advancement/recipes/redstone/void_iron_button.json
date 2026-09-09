@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rbfixed:void_iron_button"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_void_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rbfixed:void_iron_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_void_iron_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rbfixed:void_iron_button"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "void_buttons",
+  "ingredients": [
+    "rbfixed:void_copper_ingot"
+  ],
+  "result": {
+    "id": "rbfixed:void_copper_button"
+  }
+}

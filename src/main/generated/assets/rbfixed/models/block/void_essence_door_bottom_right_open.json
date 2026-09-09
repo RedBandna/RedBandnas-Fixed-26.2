@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "rbfixed:block/void_essence_door_bottom",
+    "top": "rbfixed:block/void_essence_door_top"
+  }
+}

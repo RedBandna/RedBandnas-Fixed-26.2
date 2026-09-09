@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "group": "pure_void_essence",
   "key": {
     "#": "rbfixed:void_essence"

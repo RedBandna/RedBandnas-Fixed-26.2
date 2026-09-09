@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rbfixed:block/void_essence_slab"
+    },
+    "type=double": {
+      "model": "rbfixed:block/void_essence_block"
+    },
+    "type=top": {
+      "model": "rbfixed:block/void_essence_slab_top"
+    }
+  }
+}
