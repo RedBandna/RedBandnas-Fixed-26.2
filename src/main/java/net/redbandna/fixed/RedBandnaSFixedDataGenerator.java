@@ -2,10 +2,7 @@ package net.redbandna.fixed;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.redbandna.fixed.datagen.ModBlockLootTableProvider;
-import net.redbandna.fixed.datagen.ModBlockTagsProvider;
-import net.redbandna.fixed.datagen.ModModelProvider;
-import net.redbandna.fixed.datagen.ModRecipeProvider;
+import net.redbandna.fixed.datagen.*;
 
 public class RedBandnaSFixedDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -13,6 +10,7 @@ public class RedBandnaSFixedDataGenerator implements DataGeneratorEntrypoint {
 		var pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModBlockTagsProvider::new);
 		pack.addProvider(ModBlockLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);

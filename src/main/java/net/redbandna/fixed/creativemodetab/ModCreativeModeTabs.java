@@ -3,16 +3,13 @@ package net.redbandna.fixed.creativemodetab;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
-import net.redbandna.fixed.item.custom.PaintBrushItem;
 
 public class ModCreativeModeTabs {
 
@@ -41,6 +38,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.VOID_ESSENCE_ORE);
                         output.accept(ModBlocks.VOID_ESSENCE_BLOCK);
                         output.accept(ModBlocks.PURE_VOID_ESSENCE_BLOCK);
+
+                        output.accept(ModBlocks.END_RELAY);
                     }).build());
 
     public static final CreativeModeTab MISC_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,

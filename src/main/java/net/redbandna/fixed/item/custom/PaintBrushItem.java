@@ -57,9 +57,7 @@ public class PaintBrushItem extends BrushItem {
                 Optional<ColorCollection<Block>> collection = getColorCollection(level.getBlockState(pos).getBlock());
                 if (collection.isPresent()) {
 
-                    int timeElapsed = this.getUseDuration(itemStack, livingEntity) - ticksRemaining + 1;
-                    boolean isLastTickBeforeBackswing = timeElapsed % 10 == 5;
-                    if (isLastTickBeforeBackswing) {
+                    if ((this.getUseDuration(itemStack, livingEntity) - ticksRemaining + 1) % 10 == 5) {
 
                         level.playSound(player, pos, SoundEvents.BRUSH_GENERIC, SoundSource.BLOCKS);
 

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.world.item.Items;
 import net.redbandna.fixed.block.ModBlocks;
@@ -21,6 +22,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.VOID_ESSENCE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.VOID_ESSENCE_BLOCK);
         blockModelGenerators.createTrivialCube(ModBlocks.PURE_VOID_ESSENCE_BLOCK);
+
+        blockModelGenerators.createTrivialBlock(ModBlocks.END_RELAY, TexturedModel.CUBE_TOP_BOTTOM);
     }
 
     @Override

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "rbfixed:block/end_relay"
+    }
+  }
+}

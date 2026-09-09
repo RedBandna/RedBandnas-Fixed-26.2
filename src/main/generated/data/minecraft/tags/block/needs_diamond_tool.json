@@ -2,6 +2,7 @@
   "values": [
     "rbfixed:void_essence_ore",
     "rbfixed:void_essence_block",
-    "rbfixed:pure_void_essence_block"
+    "rbfixed:pure_void_essence_block",
+    "rbfixed:end_relay"
   ]
 }

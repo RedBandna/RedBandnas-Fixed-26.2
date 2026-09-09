@@ -31,6 +31,7 @@
   "block.rbfixed.void_essence_ore": "Void Essence Ore",
   "block.rbfixed.void_essence_block": "Block of Void Essence",
   "block.rbfixed.pure_void_essence_block": "Block of Pure Void Essence",
+  "block.rbfixed.end_relay": "End Relay",
 
   "creativemodetab.rbfixed.end_items": "End Items",
   "creativemodetab.rbfixed.end_blocks": "End Blocks",

@@ -62,6 +62,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                             .group("paint_brushes")
                             .save(output);
                 });
+
+                shaped(RecipeCategory.TRANSPORTATION, ModBlocks.END_RELAY)
+                        .pattern("OEO")
+                        .pattern("ALA")
+                        .pattern("OLO")
+                        .define('O', Blocks.OBSIDIAN)
+                        .define('E', Items.ENDER_EYE)
+                        .define('A', ModItems.VOID_AMETHYST_SHARD)
+                        .define('L', ModItems.VOID_LAPIS_LAZULI)
+                        .unlockedBy(getHasName(ModItems.VOID_LAPIS_LAZULI), has(ModItems.VOID_LAPIS_LAZULI))
+                        .save((output));
             }
 
             public void BuildVoidMineralRecipe(ItemLike void_mineral, ItemLike mineral, RecipeOutput output) {

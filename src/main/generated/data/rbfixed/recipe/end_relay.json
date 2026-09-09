@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": "rbfixed:void_amethyst_shard",
+    "E": "minecraft:ender_eye",
+    "L": "rbfixed:void_lapis_lazuli",
+    "O": "minecraft:obsidian"
+  },
+  "pattern": [
+    "OEO",
+    "ALA",
+    "OLO"
+  ],
+  "result": {
+    "id": "rbfixed:end_relay"
+  }
+}
