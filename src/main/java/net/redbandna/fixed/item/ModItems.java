@@ -8,13 +8,14 @@ import net.minecraft.references.BlockItemId;
 import net.minecraft.references.ItemIds;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BundleContents;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColorCollection;
 import net.redbandna.fixed.RedBandnaSFixed;
+import net.redbandna.fixed.item.custom.ModArmorMaterials;
 import net.redbandna.fixed.item.custom.PaintBrushItem;
 import net.redbandna.fixed.item.custom.TrowelItem;
 
@@ -43,6 +44,44 @@ public class ModItems {
     public static final Item Trowel = registerItem("trowel", properties -> new TrowelItem(properties.durability(320)));
 
     public static final ColorCollection<Item> PAINT_BRUSH = ColorCollection.registerItems(ColorCollection.prefixWithColor(ColorCollection.create("paint_brush")), (name, color) -> registerDyedItem(name, color, PaintBrushItem::new));
+
+    public static final Item FLINT_SWORD = registerItem("flint_sword",
+            properties -> new Item(properties.sword(ModToolMaterials.FLINT, 3, -2.4f)));
+    public static final Item FLINT_PICKAXE = registerItem("flint_pickaxe",
+            properties -> new Item(properties.pickaxe(ModToolMaterials.FLINT, 1, -2.8f)));
+    public static final Item FLINT_SHOVEL = registerItem("flint_shovel",
+            properties -> new ShovelItem(ModToolMaterials.FLINT, 1.5f, -3.0f, properties));
+    public static final Item FLINT_AXE = registerItem("flint_axe",
+            properties -> new AxeItem(ModToolMaterials.FLINT, 6, -3.2f, properties));
+    public static final Item FLINT_HOE = registerItem("flint_hoe",
+            properties -> new HoeItem(ModToolMaterials.FLINT, 0, -3.0f, properties));
+    public static final Item FLINT_SPEAR = registerItem("flint_spear",
+            properties -> new Item(properties.spear(ModToolMaterials.FLINT, 0.65f, 0.7f, 0.75f,
+                    5.0f, 14.0f, 10.0f, 5.1f, 15.0f, 4.6f)));
+
+    public static final Item ROSE_QUARTZ_SWORD = registerItem("rose_quartz_sword",
+            properties -> new Item(properties.sword(ModToolMaterials.ROSE_QUARTZ, 3, -2.4f)));
+    public static final Item ROSE_QUARTZ_PICKAXE = registerItem("rose_quartz_pickaxe",
+            properties -> new Item(properties.pickaxe(ModToolMaterials.ROSE_QUARTZ, 1, -2.8f)));
+    public static final Item ROSE_QUARTZ_SHOVEL = registerItem("rose_quartz_shovel",
+            properties -> new ShovelItem(ModToolMaterials.ROSE_QUARTZ, 1.5f, -3.0f, properties));
+    public static final Item ROSE_QUARTZ_AXE = registerItem("rose_quartz_axe",
+            properties -> new AxeItem(ModToolMaterials.ROSE_QUARTZ, 6, -3.2f, properties));
+    public static final Item ROSE_QUARTZ_HOE = registerItem("rose_quartz_hoe",
+            properties -> new HoeItem(ModToolMaterials.ROSE_QUARTZ, 0, -3.0f, properties));
+    public static final Item ROSE_QUARTZ_SPEAR = registerItem("rose_quartz_spear",
+            properties -> new Item(properties.spear(ModToolMaterials.ROSE_QUARTZ, 1.05F, 1.075F, 0.5F,
+                    3.0F, 10.0F, 6.5F, 5.1F, 10.0F, 4.6F)));
+    public static final Item ROSE_QUARTZ_HELMET = registerItem("rose_quartz_helmet",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_QUARTZ, ArmorType.HELMET)));
+    public static final Item ROSE_QUARTZ_CHESTPLATE = registerItem("rose_quartz_chestplate",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_QUARTZ, ArmorType.CHESTPLATE)));
+    public static final Item ROSE_QUARTZ_LEGGINGS = registerItem("rose_quartz_leggings",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_QUARTZ, ArmorType.LEGGINGS)));
+    public static final Item ROSE_QUARTZ_BOOTS = registerItem("rose_quartz_boots",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_QUARTZ, ArmorType.BOOTS)));
+    public static final Item ROSE_QUARTZ_HORSE_ARMOR = registerItem("rose_quartz_horse_armor",
+            properties -> new Item(properties.horseArmor(ModArmorMaterials.ROSE_QUARTZ)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name),

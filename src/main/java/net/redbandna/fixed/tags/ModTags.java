@@ -10,6 +10,9 @@ import net.redbandna.fixed.RedBandnaSFixed;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> VOID_BUTTONS = createTag("void_buttons");
+        public static final TagKey<Block> INCORRECT_FOR_FLINT_TOOL = createTag("incorrect_for_flint_tool");
+        public static final TagKey<Block> CORRECT_FOR_ROSE_QUARTZ_TOOL = createTag("incorrect_for_flint_tool");
+        public static final TagKey<Block> INCORRECT_FOR_ROSE_QUARTZ_TOOL = createTag("incorrect_for_flint_tool");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name));
@@ -18,6 +21,8 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> VOID_MINERALS = createTag("void_minerals");
+        public static final TagKey<Item> FLINT_REPAIR = createTag("flint_repair");
+        public static final TagKey<Item> ROSE_QUARTZ_REPAIR = createTag("flint_repair");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name));

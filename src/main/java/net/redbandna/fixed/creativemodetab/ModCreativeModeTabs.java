@@ -47,13 +47,30 @@ public class ModCreativeModeTabs {
 
                     }).build());
 
-    public static final CreativeModeTab MISC_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
-            Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "mod_misc"),
+    public static final CreativeModeTab MORE_TOOLS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "more_tools"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.Trowel))
-                    .title(Component.translatable("creativemodetab.rbfixed.mod_misc"))
+                    .title(Component.translatable("creativemodetab.rbfixed.more_tools"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.Trowel);
                         ModItems.PAINT_BRUSH.forEach(output::accept);
+                        output.accept(ModItems.FLINT_SWORD);
+                        output.accept(ModItems.FLINT_PICKAXE);
+                        output.accept(ModItems.FLINT_SHOVEL);
+                        output.accept(ModItems.FLINT_AXE);
+                        output.accept(ModItems.FLINT_HOE);
+                        output.accept(ModItems.FLINT_SPEAR);
+                        output.accept(ModItems.ROSE_QUARTZ_SWORD);
+                        output.accept(ModItems.ROSE_QUARTZ_PICKAXE);
+                        output.accept(ModItems.ROSE_QUARTZ_SHOVEL);
+                        output.accept(ModItems.ROSE_QUARTZ_AXE);
+                        output.accept(ModItems.ROSE_QUARTZ_HOE);
+                        output.accept(ModItems.ROSE_QUARTZ_SPEAR);
+                        output.accept(ModItems.ROSE_QUARTZ_HELMET);
+                        output.accept(ModItems.ROSE_QUARTZ_CHESTPLATE);
+                        output.accept(ModItems.ROSE_QUARTZ_LEGGINGS);
+                        output.accept(ModItems.ROSE_QUARTZ_BOOTS);
+                        output.accept(ModItems.ROSE_QUARTZ_HORSE_ARMOR);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

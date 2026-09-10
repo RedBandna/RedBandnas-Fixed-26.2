@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
+import net.redbandna.fixed.item.custom.ModArmorMaterials;
 
 public class ModModelProvider extends FabricModelProvider {
 
@@ -65,5 +66,24 @@ public class ModModelProvider extends FabricModelProvider {
         ModItems.PAINT_BRUSH.forEach(paint_brush -> {
             itemModelGenerators.generateFlatItem(paint_brush, ModelTemplates.FLAT_HANDHELD_ITEM);
         });
+
+        itemModelGenerators.generateFlatItem(ModItems.FLINT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.FLINT_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.FLINT_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.FLINT_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.FLINT_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateSpear(ModItems.FLINT_SPEAR);
+
+        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateSpear(ModItems.ROSE_QUARTZ_SPEAR);
+        itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_HELMET, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_CHESTPLATE, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_LEGGINGS, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_BOOTS, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_HORSE_ARMOR, ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 }

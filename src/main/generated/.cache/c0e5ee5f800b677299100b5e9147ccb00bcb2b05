@@ -1,2 +1,12 @@
 // 26.2	-999999999-01-01T00:00:00	RedBandna's Fixed/Tags for minecraft:item
+9f26b5183c11ae166ed9be0d0ba42e1c0662a2bc data/minecraft/tags/item/axes.json
+46a763ad129b25d0b0040516f080ab4aa916b704 data/minecraft/tags/item/chest_armor.json
+bec5b7121204da21acb6f7974205d7f7d9cb036b data/minecraft/tags/item/foot_armor.json
+18c8f6cd3bd14ca6616b19c8a5538e23695a9929 data/minecraft/tags/item/head_armor.json
+9e2789c08cf35438838324e678857ba68aa2041d data/minecraft/tags/item/hoes.json
+b2361c58ef5b504c3f419aebf9190a3203296e21 data/minecraft/tags/item/leg_armor.json
+247c20680217106e75185072a01abf7c7b57568f data/minecraft/tags/item/pickaxes.json
+ae848d3d5d20cdd5f8c18933ce97bc52216c12a1 data/minecraft/tags/item/shovels.json
+29f30550eb1795e66b527734f294a7f5b830a316 data/minecraft/tags/item/spears.json
+88925c2a6b6e5e9d34cb4f96816d50741c47a202 data/minecraft/tags/item/swords.json
 d4ee8fbd2cdf0e26e5be7d07fca8fce3af730f53 data/rbfixed/tags/item/void_minerals.json

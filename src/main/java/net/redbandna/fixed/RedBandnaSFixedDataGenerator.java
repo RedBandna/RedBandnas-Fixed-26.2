@@ -12,6 +12,7 @@ public class RedBandnaSFixedDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModBlockTagsProvider::new);
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModEquipmentAssetProvider::new);
 		pack.addProvider(ModBlockLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 	}

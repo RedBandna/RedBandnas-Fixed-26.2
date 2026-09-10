@@ -1,5 +1,8 @@
 {
   "values": [
-    "#rbfixed:void_buttons"
+    {
+      "id": "#rbfixed:void_buttons",
+      "required": false
+    }
   ]
 }

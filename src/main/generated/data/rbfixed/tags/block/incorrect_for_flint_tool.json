@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#minecraft:incorrect_for_wooden_tool",
+      "required": false
+    },
+    {
+      "id": "#minecraft:incorrect_for_iron_tool",
+      "required": false
+    },
+    {
+      "id": "#minecraft:incorrect_for_diamond_tool",
+      "required": false
+    }
+  ]
+}

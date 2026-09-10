@@ -12,6 +12,23 @@
   "item.rbfixed.void_netherite_scrap": "Void Netherite Scrap",
   "item.rbfixed.void_quartz": "Void Quartz",
   "item.rbfixed.void_redstone": "Void Redstone",
+  "item.rbfixed.flint_sword": "Flint Sword",
+  "item.rbfixed.flint_pickaxe": "Flint Pickaxe",
+  "item.rbfixed.flint_shovel": "Flint Shovel",
+  "item.rbfixed.flint_axe": "Flint Axe",
+  "item.rbfixed.flint_hoe": "Flint Hoe",
+  "item.rbfixed.flint_spear": "Flint Spear",
+  "item.rbfixed.rose_quartz_sword": "Rose Quartz Sword",
+  "item.rbfixed.rose_quartz_pickaxe": "Rose Quartz Pickaxe",
+  "item.rbfixed.rose_quartz_shovel": "Rose Quartz Shovel",
+  "item.rbfixed.rose_quartz_axe": "Rose Quartz Axe",
+  "item.rbfixed.rose_quartz_hoe": "Rose Quartz Hoe",
+  "item.rbfixed.rose_quartz_spear": "Rose Quartz Spear",
+  "item.rbfixed.rose_quartz_helmet": "Rose Quartz Helmet",
+  "item.rbfixed.rose_quartz_chestplate": "Rose Quartz Chestplate",
+  "item.rbfixed.rose_quartz_leggings": "Rose Quartz Leggings",
+  "item.rbfixed.rose_quartz_boots": "Rose Quartz Boots",
+  "item.rbfixed.rose_quartz_horse_armor": "Rose Quartz Horse Armor",
 
   "item.rbfixed.trowel": "Trowel",
   "item.rbfixed.red_paint_brush": "Red Paint Brush",
@@ -54,5 +71,5 @@
 
   "creativemodetab.rbfixed.end_items": "End Items",
   "creativemodetab.rbfixed.end_blocks": "End Blocks",
-  "creativemodetab.rbfixed.mod_misc": "Miscellaneous Mod Items"
+  "creativemodetab.rbfixed.more_tools": "More Tools"
 }

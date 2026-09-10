@@ -1,0 +1,24 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "rbfixed:rose_quartz"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "rbfixed:rose_quartz"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "rbfixed:rose_quartz"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "rbfixed:rose_quartz"
+      }
+    ]
+  }
+}

@@ -9,6 +9,8 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
+import net.minecraft.world.item.crafting.SmithingRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.redbandna.fixed.block.ModBlocks;
@@ -98,6 +100,38 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                             .group("paint_brushes")
                             .save(output);
                 });
+
+                shaped(RecipeCategory.COMBAT, ModItems.FLINT_SWORD)
+                        .pattern("F")
+                        .pattern("F")
+                        .pattern("S")
+                        .define('F', Items.FLINT).define('S', Items.STICK).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.FLINT_PICKAXE)
+                        .pattern("FFF")
+                        .pattern(" S ")
+                        .pattern(" S ")
+                        .define('F', Items.FLINT).define('S', Items.STICK).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.FLINT_SHOVEL)
+                        .pattern("F")
+                        .pattern("S")
+                        .pattern("S")
+                        .define('F', Items.FLINT).define('S', Items.STICK).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.FLINT_AXE)
+                        .pattern("SF")
+                        .pattern("S ")
+                        .define('F', Items.FLINT).define('S', Items.STICK).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.FLINT_HOE)
+                        .pattern("FF")
+                        .pattern("S ")
+                        .pattern("S ")
+                        .define('F', Items.FLINT).define('S', Items.STICK).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.FLINT_SPEAR)
+                        .pattern("  F")
+                        .pattern(" S ")
+                        .pattern("S  ")
+                        .define('F', Items.FLINT).define('S', Items.STICK).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(output);
+
+
             }
 
             public void buildVoidButtonRecipe(ItemLike button, ItemLike mineral, RecipeOutput output) {
