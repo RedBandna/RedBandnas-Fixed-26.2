@@ -1,7 +1,6 @@
 package net.redbandna.fixed.creativemodetab;
 
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -13,7 +12,6 @@ import net.minecraft.world.level.block.Block;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
-import net.redbandna.fixed.tags.ModTags;
 
 public class ModCreativeModeTabs {
 
@@ -71,6 +69,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROSE_QUARTZ_LEGGINGS);
                         output.accept(ModItems.ROSE_QUARTZ_BOOTS);
                         output.accept(ModItems.ROSE_QUARTZ_HORSE_ARMOR);
+                        output.accept(ModItems.STONE_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(ModItems.COPPER_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(ModItems.CHAINMAIL_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(ModItems.IRON_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(ModItems.GOLDEN_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(ModItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(ModItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

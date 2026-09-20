@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:quartz",
+  "addition_count": 52,
+  "base": "minecraft:golden_boots",
+  "result": {
+    "id": "rbfixed:rose_quartz_boots"
+  },
+  "template": "rbfixed:rose_quartz_upgrade_smithing_template"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:cobblestone",
+  "addition_count": 2,
+  "base": "rbfixed:flint_sword",
+  "result": {
+    "id": "minecraft:stone_sword"
+  },
+  "template": "rbfixed:stone_upgrade_smithing_template"
+}

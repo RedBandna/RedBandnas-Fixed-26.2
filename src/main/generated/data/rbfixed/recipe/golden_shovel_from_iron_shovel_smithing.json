@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:gold_ingot",
+  "addition_count": 1,
+  "base": "minecraft:iron_shovel",
+  "result": {
+    "id": "minecraft:golden_shovel"
+  },
+  "template": "rbfixed:golden_upgrade_smithing_template"
+}

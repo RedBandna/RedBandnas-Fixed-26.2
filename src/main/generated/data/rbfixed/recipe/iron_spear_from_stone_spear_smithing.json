@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:iron_ingot",
+  "addition_count": 1,
+  "base": "minecraft:stone_spear",
+  "result": {
+    "id": "minecraft:iron_spear"
+  },
+  "template": "rbfixed:iron_upgrade_smithing_template"
+}

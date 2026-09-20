@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:quartz",
+  "addition_count": 50,
+  "base": "minecraft:golden_sword",
+  "result": {
+    "id": "rbfixed:rose_quartz_sword"
+  },
+  "template": "rbfixed:rose_quartz_upgrade_smithing_template"
+}

@@ -1,25 +1,33 @@
 package net.redbandna.fixed.block;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.redstone.Orientation;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.custom.EndRelayBlock;
 import net.redbandna.fixed.block.custom.PlayerPressurePlateBlock;
+import net.redbandna.fixed.block.custom.TriggeredButtonBlock;
+import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
@@ -86,7 +94,7 @@ public class ModBlocks {
     public static final Block VOID_QUARTZ_BUTTON = registerBlock("void_quartz_button",
             properties -> new ButtonBlock(ModBlockSetType.VOID, 20, properties.strength(20f).requiresCorrectToolForDrops().sound(SoundType.EMPTY).noCollision()));
     public static final Block VOID_REDSTONE_BUTTON = registerBlock("void_redstone_button",
-            properties -> new ButtonBlock(ModBlockSetType.VOID, 20, properties.strength(20f).requiresCorrectToolForDrops().sound(SoundType.EMPTY).noCollision()));
+            properties -> new TriggeredButtonBlock(ModBlockSetType.VOID, 20, properties.strength(20f).requiresCorrectToolForDrops().sound(SoundType.EMPTY).noCollision()));
     public static final List<Block> VOID_BUTTONS = List.of(VOID_AMETHYST_BUTTON, VOID_COAL_BUTTON, VOID_COPPER_BUTTON, VOID_DIAMOND_BUTTON, VOID_EMERALD_BUTTON,
             VOID_GOLD_BUTTON, VOID_IRON_BUTTON, VOID_LAPIS_BUTTON, VOID_NETHERITE_BUTTON, VOID_QUARTZ_BUTTON, VOID_REDSTONE_BUTTON);
 

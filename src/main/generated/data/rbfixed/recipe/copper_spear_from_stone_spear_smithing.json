@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:copper_ingot",
+  "addition_count": 1,
+  "base": "minecraft:stone_spear",
+  "result": {
+    "id": "minecraft:copper_spear"
+  },
+  "template": "rbfixed:copper_upgrade_smithing_template"
+}

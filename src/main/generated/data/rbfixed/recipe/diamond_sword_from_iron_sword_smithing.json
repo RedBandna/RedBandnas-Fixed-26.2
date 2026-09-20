@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "addition_count": 2,
+  "base": "minecraft:iron_sword",
+  "result": {
+    "id": "minecraft:diamond_sword"
+  },
+  "template": "rbfixed:diamond_upgrade_smithing_template"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:gold_ingot",
+  "addition_count": 5,
+  "base": "minecraft:copper_helmet",
+  "result": {
+    "id": "minecraft:golden_helmet"
+  },
+  "template": "rbfixed:golden_upgrade_smithing_template"
+}

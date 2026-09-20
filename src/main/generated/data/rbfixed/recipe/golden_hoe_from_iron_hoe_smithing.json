@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:gold_ingot",
+  "addition_count": 2,
+  "base": "minecraft:iron_hoe",
+  "result": {
+    "id": "minecraft:golden_hoe"
+  },
+  "template": "rbfixed:golden_upgrade_smithing_template"
+}

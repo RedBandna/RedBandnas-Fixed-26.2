@@ -32,13 +32,13 @@ public class PaintBrushItem extends BrushItem {
     private static final List<ColorCollection<Block>> blockCollections = List.of(
             Blocks.BED, Blocks.WOOL, Blocks.STAINED_GLASS, Blocks.DYED_TERRACOTTA, Blocks.STAINED_GLASS_PANE, Blocks.CARPET, Blocks.DYED_SHULKER_BOX, Blocks.GLAZED_TERRACOTTA, Blocks.CONCRETE, Blocks.CONCRETE_POWDER, Blocks.DYED_CANDLE);
 
-    public static Optional<ColorCollection<Block>> getColorCollection(Block block) {
-        if (block.equals(Blocks.TERRACOTTA)) return Optional.of(Blocks.DYED_TERRACOTTA);
-        if (block.equals(Blocks.GLASS)) return Optional.of(Blocks.STAINED_GLASS);
-        if (block.equals(Blocks.GLASS_PANE)) return Optional.of(Blocks.STAINED_GLASS_PANE);
-        if (block.equals(Blocks.SHULKER_BOX)) return Optional.of(Blocks.DYED_SHULKER_BOX);
-        if (block.equals(Blocks.CANDLE)) return Optional.of(Blocks.DYED_CANDLE);
-        return blockCollections.stream().filter(blocks -> blocks.asList().contains(block)).findFirst();
+    public static Optional<ColorCollection<Block>> getColorCollection(BlockState state) {
+        if (state.is(Blocks.TERRACOTTA)) return Optional.of(Blocks.DYED_TERRACOTTA);
+        if (state.is(Blocks.GLASS)) return Optional.of(Blocks.STAINED_GLASS);
+        if (state.is(Blocks.GLASS_PANE)) return Optional.of(Blocks.STAINED_GLASS_PANE);
+        if (state.is(Blocks.SHULKER_BOX)) return Optional.of(Blocks.DYED_SHULKER_BOX);
+        if (state.is(Blocks.CANDLE)) return Optional.of(Blocks.DYED_CANDLE);
+        return blockCollections.stream().filter(blocks -> blocks.asList().contains(state.getBlock())).findFirst();
     }
 
     public PaintBrushItem(Properties properties, DyeColor color) {
@@ -54,7 +54,7 @@ public class PaintBrushItem extends BrushItem {
             if (hitResult instanceof BlockHitResult blockHitResult && hitResult.getType() == HitResult.Type.BLOCK) {
 
                 BlockPos pos = blockHitResult.getBlockPos();
-                Optional<ColorCollection<Block>> collection = getColorCollection(level.getBlockState(pos).getBlock());
+                Optional<ColorCollection<Block>> collection = getColorCollection(level.getBlockState(pos));
                 if (collection.isPresent()) {
 
                     if ((this.getUseDuration(itemStack, livingEntity) - ticksRemaining + 1) % 10 == 5) {
@@ -65,7 +65,7 @@ public class PaintBrushItem extends BrushItem {
 
                             BlockState blockState = serverLevel.getBlockState(pos);
                             Block dyed_block = collection.get().pick(dyeColor);
-                            if (blockState.getBlock().equals(dyed_block)) {
+                            if (blockState.is(dyed_block)) {
                                 return;
                             }
 

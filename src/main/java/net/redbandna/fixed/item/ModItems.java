@@ -1,18 +1,16 @@
 package net.redbandna.fixed.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.references.BlockItemId;
-import net.minecraft.references.ItemIds;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.Util;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ColorCollection;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.item.custom.ModArmorMaterials;
@@ -43,7 +41,8 @@ public class ModItems {
 
     public static final Item Trowel = registerItem("trowel", properties -> new TrowelItem(properties.durability(320)));
 
-    public static final ColorCollection<Item> PAINT_BRUSH = ColorCollection.registerItems(ColorCollection.prefixWithColor(ColorCollection.create("paint_brush")), (name, color) -> registerDyedItem(name, color, PaintBrushItem::new));
+    public static final ColorCollection<Item> PAINT_BRUSH = ColorCollection.registerItems(
+            ColorCollection.prefixWithColor(ColorCollection.create("paint_brush")), (name, color) -> registerDyedItem(name, color, PaintBrushItem::new));
 
     public static final Item FLINT_SWORD = registerItem("flint_sword",
             properties -> new Item(properties.sword(ModToolMaterials.FLINT, 3, -2.4f)));
@@ -83,6 +82,21 @@ public class ModItems {
     public static final Item ROSE_QUARTZ_HORSE_ARMOR = registerItem("rose_quartz_horse_armor",
             properties -> new Item(properties.horseArmor(ModArmorMaterials.ROSE_QUARTZ)));
 
+    public static final Item STONE_UPGRADE_SMITHING_TEMPLATE = registerItem("stone_upgrade_smithing_template",
+            properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "stone", true, false));
+    public static final Item COPPER_UPGRADE_SMITHING_TEMPLATE = registerItem("copper_upgrade_smithing_template",
+            properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "copper", true, false));
+    public static final Item CHAINMAIL_UPGRADE_SMITHING_TEMPLATE = registerItem("chainmail_upgrade_smithing_template",
+            properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "chainmail", false, true));
+    public static final Item IRON_UPGRADE_SMITHING_TEMPLATE = registerItem("iron_upgrade_smithing_template",
+            properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "iron", true, true));
+    public static final Item GOLDEN_UPGRADE_SMITHING_TEMPLATE = registerItem("golden_upgrade_smithing_template",
+            properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "golden", true, true));
+    public static final Item DIAMOND_UPGRADE_SMITHING_TEMPLATE = registerItem("diamond_upgrade_smithing_template",
+            properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "diamond", true, true));
+    public static final Item ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE = registerItem("rose_quartz_upgrade_smithing_template",
+            properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "rose_quartz", true, true));
+
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name),
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name)))));
@@ -91,6 +105,29 @@ public class ModItems {
     private static Item registerDyedItem(String name, DyeColor color, BiFunction<Item.Properties, DyeColor, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name),
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name))), color));
+    }
+
+    private static SmithingTemplateItem createUpgradeTemplate (Item.Properties properties, String tier, boolean tool, boolean armor) {
+        return new SmithingTemplateItem(
+                smithingTemplateTranslatable(tier, "applies_to").withStyle(ChatFormatting.BLUE),
+                smithingTemplateTranslatable(tier, "ingredients").withStyle(ChatFormatting.BLUE),
+                smithingTemplateTranslatable(tier, "base_slot_description"),
+                smithingTemplateTranslatable(tier, "additions_slot_description"),
+                tool ? armor ? List.of(slot("sword"), slot("pickaxe"), slot("shovel"), slot("axe"), slot("hoe"), slot("spear"),
+                        slot("helmet"), slot("chestplate"), slot("leggings"), slot("boots")) :
+                                List.of(slot("sword"), slot("pickaxe"), slot("shovel"), slot("axe"), slot("hoe"), slot("spear")) :
+                                List.of(slot("helmet"), slot("chestplate"), slot("leggings"), slot("boots")),
+                List.of(slot("ingot")),
+                properties
+        );
+    }
+
+    private static MutableComponent smithingTemplateTranslatable(String material, String postfix) {
+        return Component.translatable(Util.makeDescriptionId("item", Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "smithing_template." + material + "_upgrade." + postfix)));
+    }
+
+    private static Identifier slot (String containerSlot) {
+        return Identifier.withDefaultNamespace("container/slot/" + containerSlot);
     }
 
     public static ResourceKey<Item> getRK(Item item) {
