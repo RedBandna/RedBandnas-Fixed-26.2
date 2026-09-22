@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "rbfixed:block/nether_forge_front",
+    "side": "rbfixed:block/nether_forge_side",
+    "top": "rbfixed:block/nether_forge_top"
+  }
+}

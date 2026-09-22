@@ -18,6 +18,9 @@
 		"main": [
 			"net.redbandna.fixed.RedBandnaSFixed"
 		],
+		"client": [
+			"net.redbandna.fixed.RedBandnasFixedClient"
+		],
 		"fabric-datagen": [
 			"net.redbandna.fixed.RedBandnaSFixedDataGenerator"
 		]

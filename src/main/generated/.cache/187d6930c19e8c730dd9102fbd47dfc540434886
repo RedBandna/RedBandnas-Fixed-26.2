@@ -1,5 +1,6 @@
 // 26.2	-999999999-01-01T00:00:00	RedBandna's Fixed/Model Definitions
 b02cb72c5d293f024985b95fe0dcd754b5699497 assets/rbfixed/blockstates/end_relay.json
+2aa69bf7cf2e4e063354f3357c3072cb38ff2f9d assets/rbfixed/blockstates/nether_forge.json
 df89a1e9b685e1377d32a80d1188328b33c20290 assets/rbfixed/blockstates/pure_void_essence_block.json
 3ab46a37105132bb67ef3fa5d6ca84d02aabe81e assets/rbfixed/blockstates/void_amethyst_button.json
 b8b3b2ce19b4104a2d821890cf1266856f61a84b assets/rbfixed/blockstates/void_coal_button.json
@@ -41,6 +42,7 @@ b160f1c9ca43732ad9fb9a6ed7db0558ece0fae3 assets/rbfixed/items/iron_upgrade_smith
 53e5cc88640a8b23190409e82ca116e7d5cd7ec5 assets/rbfixed/items/light_gray_paint_brush.json
 2dd6314c03d9b2dc7bf30de56cfc41978104cd7e assets/rbfixed/items/lime_paint_brush.json
 6ca8a89b428a94f0fee882b5bd8e7ce53e0b7ead assets/rbfixed/items/magenta_paint_brush.json
+bf06197cc5e5cc54b6f31ad2250c1c7a151ae2be assets/rbfixed/items/nether_forge.json
 fa0a691da8036683f71666c418e5fca35f1d38e1 assets/rbfixed/items/orange_paint_brush.json
 36d19d45bb8be390bcbe79fe6957f02b098c9dd2 assets/rbfixed/items/pink_paint_brush.json
 682dbd5282efbd5c72889051fbcb12db083b27ab assets/rbfixed/items/pure_void_essence.json
@@ -94,6 +96,8 @@ a4332540f9282e13293a7aecbaae3d248e887b75 assets/rbfixed/items/void_redstone.json
 eab1078da0a207df914d13227cdc3f1fb18d8ec2 assets/rbfixed/items/white_paint_brush.json
 7a9445c7357455e2139f7af47216c6d110f35e4f assets/rbfixed/items/yellow_paint_brush.json
 46d03770f9f0e38ed52535d15aa7c23992ce4bf2 assets/rbfixed/models/block/end_relay.json
+7341d6d4b5c730b69bafbd1766c6d30b253653d6 assets/rbfixed/models/block/nether_forge.json
+33fa2db289ceeaf0c0c56826ba22adcf30f26918 assets/rbfixed/models/block/nether_forge_on.json
 7e1326ce5175138d0cc2512cf49f36f681bf9814 assets/rbfixed/models/block/pure_void_essence_block.json
 e93c653ee51c129c85212a5c0ce07563247e09a7 assets/rbfixed/models/block/void_amethyst_button.json
 3b6af64e6f3e4971d7d4ccec122eaf27c5e39f40 assets/rbfixed/models/block/void_amethyst_button_inventory.json

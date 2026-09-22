@@ -3,10 +3,8 @@ package net.redbandna.fixed.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.tags.ModTags;
 
@@ -28,7 +26,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_SLAB))
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_PRESSURE_PLATE))
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_DOOR))
-                .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_TRAPDOOR));
+                .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_TRAPDOOR))
+                .add(ModBlocks.getRK(ModBlocks.NETHER_FORGE));
         for (Block button : ModBlocks.VOID_BUTTONS)
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.getRK(button));
 
@@ -41,7 +40,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_SLAB))
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_PRESSURE_PLATE))
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_DOOR))
-                .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_TRAPDOOR));
+                .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_TRAPDOOR))
+                .add(ModBlocks.getRK(ModBlocks.NETHER_FORGE));
         for (Block button : ModBlocks.VOID_BUTTONS)
             tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.getRK(button));
 

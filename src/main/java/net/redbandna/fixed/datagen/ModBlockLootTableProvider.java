@@ -28,7 +28,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.VOID_ESSENCE_TRAPDOOR);
         for (Block button : ModBlocks.VOID_BUTTONS)
             dropSelf(button);
-
+        dropSelf(ModBlocks.NETHER_FORGE);
 
     }
 }

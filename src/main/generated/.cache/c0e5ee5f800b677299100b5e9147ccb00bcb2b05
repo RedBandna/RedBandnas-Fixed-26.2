@@ -9,4 +9,7 @@ b2361c58ef5b504c3f419aebf9190a3203296e21 data/minecraft/tags/item/leg_armor.json
 ae848d3d5d20cdd5f8c18933ce97bc52216c12a1 data/minecraft/tags/item/shovels.json
 29f30550eb1795e66b527734f294a7f5b830a316 data/minecraft/tags/item/spears.json
 88925c2a6b6e5e9d34cb4f96816d50741c47a202 data/minecraft/tags/item/swords.json
+4333e5b0d3c082c5e91baec1955d1a9d418dc318 data/rbfixed/tags/item/flint_repair.json
+e3a284c99066fc97061fff3c889624c1b8045302 data/rbfixed/tags/item/forge_fuel_items.json
+f35603f82f8c64bf0b1279aa14c7126a40917166 data/rbfixed/tags/item/rose_quartz_repair.json
 d4ee8fbd2cdf0e26e5be7d07fca8fce3af730f53 data/rbfixed/tags/item/void_minerals.json

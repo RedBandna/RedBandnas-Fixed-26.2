@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_trowel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rbfixed:trowel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "description": {
+      "translate": "advancement.rbfixed.root.description"
+    },
+    "icon": {
+      "id": "rbfixed:trowel"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.rbfixed.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_trowel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

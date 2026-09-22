@@ -1,6 +1,6 @@
 package net.redbandna.fixed.mixin;
 
-import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -29,14 +29,16 @@ public abstract class SmithingMenuMixin extends ItemCombinerMenu {
 
     @Inject(method = "onTake", at = @At(value = "HEAD"))
     protected void shrinkCount(Player player, ItemStack carried, CallbackInfo ci) {
-        if (player instanceof LocalPlayer) return;
+        if (player instanceof ServerPlayer serverPlayer) {
+            SmithingRecipe recipe = serverPlayer.level().recipeAccess().getRecipeFor(RecipeType.SMITHING, createRecipeInput(), serverPlayer.level()).get().value();
 
-        SmithingRecipe recipe = player.level().recipeAccess().getSynchronizedRecipes().getFirstMatch(RecipeType.SMITHING, createRecipeInput(), player.level()).get().value();
-        if (recipe instanceof SmithingTransformRecipeExtension transformRecipe) {
-            ItemStack stack = this.inputSlots.getItem(2);
-            if (!stack.isEmpty()) {
-                stack.shrink(transformRecipe.getAdditionCount() - 1);
-                this.inputSlots.setItem(2, stack);
+            if (recipe instanceof SmithingTransformRecipeExtension transformRecipe) {
+                ItemStack stack = this.inputSlots.getItem(2);
+
+                if (!stack.isEmpty()) {
+                    stack.shrink(transformRecipe.getAdditionCount() - 1);
+                    this.inputSlots.setItem(2, stack);
+                }
             }
         }
     }

@@ -6,7 +6,6 @@ import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.SmithingTransformRecipe;
-import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.item.crafting.SmithingTransformRecipeBuilderExtension;
 import net.redbandna.fixed.item.crafting.SmithingTransformRecipeExtension;
 import org.spongepowered.asm.mixin.Mixin;

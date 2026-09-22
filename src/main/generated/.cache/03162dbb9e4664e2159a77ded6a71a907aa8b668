@@ -1,5 +1,6 @@
 // 26.2	-999999999-01-01T00:00:00	RedBandna's Fixed/Block Loot Tables
 07818daa875021eec41a7a1d6e303b26f8b77d7e data/rbfixed/loot_table/blocks/end_relay.json
+637a13ba99060fa595ecc5169f81e333c511a74d data/rbfixed/loot_table/blocks/nether_forge.json
 394383fdd63212f9c8f7ec696f7b9d061bda66dc data/rbfixed/loot_table/blocks/pure_void_essence_block.json
 8d9f56643fc6d9c63dddc34e0cc116912316ac9d data/rbfixed/loot_table/blocks/void_amethyst_button.json
 4b4150bbf28f56b5c8b3a6135f654ad0043bf2a9 data/rbfixed/loot_table/blocks/void_coal_button.json

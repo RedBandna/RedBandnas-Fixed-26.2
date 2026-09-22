@@ -52,6 +52,8 @@ public class ModModelProvider extends FabricModelProvider {
             blockModelGenerators.registerSimpleItemModel(button.asItem(), inventory);
         }
 
+        blockModelGenerators.createFurnace(ModBlocks.NETHER_FORGE, TexturedModel.ORIENTABLE_ONLY_TOP);
+
     }
 
     @Override

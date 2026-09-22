@@ -7,7 +7,10 @@ import net.minecraft.resources.Identifier;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.block.entity.ModBlockEntities;
 import net.redbandna.fixed.creativemodetab.ModCreativeModeTabs;
+import net.redbandna.fixed.data.ModDataComponents;
+import net.redbandna.fixed.effect.ModEffects;
 import net.redbandna.fixed.item.ModItems;
+import net.redbandna.fixed.menu.ModeMenuTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +24,10 @@ public class RedBandnaSFixed implements ModInitializer {
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModDataComponents.registerDataComponents();
+		ModEffects.registerEffects();
 		ModBlockEntities.registerBlockEntities();
+		ModeMenuTypes.registerModMenuTypes();
 	}
 
 	public static Identifier id(String path) {

@@ -78,6 +78,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
                     }).build());
 
+    public static final CreativeModeTab MORE_BLOCKS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "more_blocks"),
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NETHER_FORGE))
+                    .title(Component.translatable("creativemodetab.rbfixed.end_items"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModBlocks.NETHER_FORGE);
+                    }).build());
+
     public static void registerModCreativeModeTabs() {
         RedBandnaSFixed.LOGGER.info("Registering Creative Mode Tabs for " + RedBandnaSFixed.MOD_ID);
     }
