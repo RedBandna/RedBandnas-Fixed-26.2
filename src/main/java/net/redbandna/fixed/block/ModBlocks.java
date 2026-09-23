@@ -34,6 +34,8 @@ public class ModBlocks {
         }
     }
 
+    public static final Block PURE_VOID_AIR = registerBlock("pure_void_air",
+            properties -> new PureVoidAirBlock(properties.noLootTable().noCollision()));
     public static final Block VOID_ESSENCE_ORE = registerBlock("void_essence_ore",
             properties -> new DropExperienceBlock(UniformInt.of(2, 5), properties.strength(25f)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));

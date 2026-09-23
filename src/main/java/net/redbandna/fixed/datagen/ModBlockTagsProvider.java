@@ -17,6 +17,9 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
+
+        tag(BlockTags.AIR).add(ModBlocks.getRK(ModBlocks.PURE_VOID_AIR));
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_ORE))
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_BLOCK))

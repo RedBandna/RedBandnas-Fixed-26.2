@@ -1,0 +1,25 @@
+{
+  "type": "rbfixed:void_rupture",
+  "config": {
+    "inner": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "rbfixed:pure_void_air"
+      }
+    },
+    "ore_chance": 0.02,
+    "outer": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "rbfixed:void_essence_ore"
+      }
+    },
+    "replace": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:end_stone"
+      }
+    },
+    "scale": 16
+  }
+}

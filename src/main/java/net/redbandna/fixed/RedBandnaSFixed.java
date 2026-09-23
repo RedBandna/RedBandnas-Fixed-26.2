@@ -11,6 +11,8 @@ import net.redbandna.fixed.data.ModDataComponents;
 import net.redbandna.fixed.effect.ModEffects;
 import net.redbandna.fixed.item.ModItems;
 import net.redbandna.fixed.menu.ModeMenuTypes;
+import net.redbandna.fixed.worldgen.ModFeatures;
+import net.redbandna.fixed.worldgen.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,6 +30,8 @@ public class RedBandnaSFixed implements ModInitializer {
 		ModEffects.registerEffects();
 		ModBlockEntities.registerBlockEntities();
 		ModeMenuTypes.registerModMenuTypes();
+		ModFeatures.registerModFeatures();
+		ModWorldGeneration.generateModWorldGen();
 	}
 
 	public static Identifier id(String path) {
