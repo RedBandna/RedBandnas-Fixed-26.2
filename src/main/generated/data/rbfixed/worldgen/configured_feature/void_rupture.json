@@ -7,7 +7,7 @@
         "Name": "rbfixed:pure_void_air"
       }
     },
-    "ore_chance": 0.02,
+    "ore_chance": 0.03,
     "outer": {
       "type": "minecraft:simple_state_provider",
       "state": {

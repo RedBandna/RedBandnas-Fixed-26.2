@@ -8,7 +8,6 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.redbandna.fixed.RedBandnaSFixed;
 
 public class VoidRuptureFeature extends Feature<VoidRuptureConfig> {
     public VoidRuptureFeature(Codec<VoidRuptureConfig> codec) {
@@ -35,14 +34,12 @@ public class VoidRuptureFeature extends Feature<VoidRuptureConfig> {
         boolean generated = false;
 
         int length = Math.max(Math.abs(dx), Math.max(Math.abs(dy), Math.abs(dz)));
-        RedBandnaSFixed.LOGGER.info(dx + ", " + dy + ", " + dz + ", " + length);
         for (int i = 0; i < length; ++i) {
             int x = origin.getX() + dx * i / length;
             int y = origin.getY() + dy * i / length;
             int z = origin.getZ() + dz * i / length;
 
             int radius = (i - i * i / length);
-            RedBandnaSFixed.LOGGER.info(radius + "");
 
             for (int a = -radius; a < radius; ++a) {
                 int h = (int) Math.sqrt(radius * radius - a * a);
