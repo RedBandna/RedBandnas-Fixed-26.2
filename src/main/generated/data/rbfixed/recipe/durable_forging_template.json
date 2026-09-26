@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "E": "rbfixed:void_emerald",
+    "Q": "minecraft:quartz",
+    "S": "minecraft:netherite_scrap"
+  },
+  "pattern": [
+    "SQS",
+    "QEQ",
+    "SQS"
+  ],
+  "result": {
+    "id": "rbfixed:durable_forging_template"
+  }
+}

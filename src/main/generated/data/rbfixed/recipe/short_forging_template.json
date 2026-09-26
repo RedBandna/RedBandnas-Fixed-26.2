@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "forging_template",
+  "ingredients": [
+    "minecraft:stick",
+    "minecraft:leather"
+  ],
+  "result": {
+    "id": "rbfixed:short_forging_template"
+  }
+}

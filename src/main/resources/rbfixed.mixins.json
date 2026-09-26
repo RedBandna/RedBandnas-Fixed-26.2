@@ -3,11 +3,15 @@
   "package": "net.redbandna.fixed.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "ExampleMixin",
+    "AbstractArrowMixin",
+    "AnvilBlockMixin",
     "LivingEntityMixin",
     "SmithingMenuMixin",
     "SmithingTransformRecipeBuilderMixin",
     "SmithingTransformRecipeMixin"
+  ],
+  "client": [
+    "ServerGamePacketListenerImplMixin"
   ],
   "injectors": {
     "defaultRequire": 1

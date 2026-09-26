@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "forging_template",
+  "ingredients": [
+    "#minecraft:metal_nuggets",
+    "#minecraft:metal_nuggets",
+    "#minecraft:metal_nuggets",
+    "#minecraft:metal_nuggets"
+  ],
+  "result": {
+    "id": "rbfixed:brittle_forging_template"
+  }
+}

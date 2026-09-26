@@ -42,7 +42,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.VOID_ESSENCE_TRAPDOOR);
                         for (Block button : ModBlocks.VOID_BUTTONS)
                             output.accept(button);
-
+                        output.accept(ModBlocks.VOID_ANVIL);
                     }).build());
 
     public static final CreativeModeTab MORE_TOOLS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
@@ -69,6 +69,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROSE_QUARTZ_LEGGINGS);
                         output.accept(ModItems.ROSE_QUARTZ_BOOTS);
                         output.accept(ModItems.ROSE_QUARTZ_HORSE_ARMOR);
+                    }).build());
+
+    public static final CreativeModeTab UPGRADE_TEMPLATES = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "upgrade_templates"),
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE))
+                    .title(Component.translatable("creativemodetab.rbfixed.upgrade_templates"))
+                    .displayItems((parameters, output) -> {
                         output.accept(ModItems.STONE_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.COPPER_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.CHAINMAIL_UPGRADE_SMITHING_TEMPLATE);
@@ -76,14 +83,29 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GOLDEN_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(ModItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
+
+                        output.accept(ModItems.SHORT_FORGING_TEMPLATE);
+                        output.accept(ModItems.DULL_FORGING_TEMPLATE);
+                        output.accept(ModItems.BRITTLE_FORGING_TEMPLATE);
+                        output.accept(ModItems.IMPRECISE_FORGING_TEMPLATE);
+                        output.accept(ModItems.PRECISE_FORGING_TEMPLATE);
+                        output.accept(ModItems.HEAVY_FORGING_TEMPLATE);
+                        output.accept(ModItems.LIGHT_FORGING_TEMPLATE);
+                        output.accept(ModItems.GIANT_FORGING_TEMPLATE);
+                        output.accept(ModItems.DWARF_FORGING_TEMPLATE);
+                        output.accept(ModItems.DURABLE_FORGING_TEMPLATE);
+                        output.accept(ModItems.SWIFT_FORGING_TEMPLATE);
+                        output.accept(ModItems.LONG_FORGING_TEMPLATE);
+                        output.accept(ModItems.LUCKY_FORGING_TEMPLATE);
                     }).build());
 
     public static final CreativeModeTab MORE_BLOCKS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "more_blocks"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NETHER_FORGE))
-                    .title(Component.translatable("creativemodetab.rbfixed.end_items"))
+                    .title(Component.translatable("creativemodetab.rbfixed.more_blocks"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.NETHER_FORGE);
+                        output.accept(ModBlocks.VOID_ANVIL);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "F": "minecraft:feather",
+    "M": "minecraft:phantom_membrane",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    "MFM",
+    "FRF",
+    "MFM"
+  ],
+  "result": {
+    "id": "rbfixed:light_forging_template"
+  }
+}

@@ -13,9 +13,11 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.ColorCollection;
 import net.redbandna.fixed.RedBandnaSFixed;
+import net.redbandna.fixed.item.custom.ForgeTemplateItem;
 import net.redbandna.fixed.item.custom.ModArmorMaterials;
 import net.redbandna.fixed.item.custom.PaintBrushItem;
 import net.redbandna.fixed.item.custom.TrowelItem;
+import net.redbandna.fixed.item.forging.ForgePattern;
 
 import java.util.List;
 import java.util.function.BiFunction;
@@ -96,6 +98,33 @@ public class ModItems {
             properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "diamond", true, true));
     public static final Item ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE = registerItem("rose_quartz_upgrade_smithing_template",
             properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "rose_quartz", true, true));
+
+    public static final Item SHORT_FORGING_TEMPLATE = registerItem("short_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.SHORT_TOOL, ForgePattern.SHORT_WEAPON)));
+    public static final Item DULL_FORGING_TEMPLATE = registerItem("dull_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.DULL_TOOL, ForgePattern.DULL_WEAPON)));
+    public static final Item BRITTLE_FORGING_TEMPLATE = registerItem("brittle_forging_template",
+            properties -> new ForgeTemplateItem(properties, ForgePattern.BRITTLE));
+    public static final Item IMPRECISE_FORGING_TEMPLATE = registerItem("imprecise_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.IMPRECISE_BOW, ForgePattern.IMPRECISE_CROSSBOW)));
+    public static final Item PRECISE_FORGING_TEMPLATE = registerItem("precise_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.PRECISE_BOW, ForgePattern.PRECISE_CROSSBOW)));
+    public static final Item HEAVY_FORGING_TEMPLATE = registerItem("heavy_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.HEAVY_WEAPON, ForgePattern.HEAVY_ARMOR)));
+    public static final Item LIGHT_FORGING_TEMPLATE = registerItem("light_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.LIGHT_WEAPON, ForgePattern.LIGHT_ARMOR)));
+    public static final Item GIANT_FORGING_TEMPLATE = registerItem("giant_forging_template",
+            properties -> new ForgeTemplateItem(properties, ForgePattern.GIANT));
+    public static final Item DWARF_FORGING_TEMPLATE = registerItem("dwarf_forging_template",
+            properties -> new ForgeTemplateItem(properties, ForgePattern.DWARF));
+    public static final Item DURABLE_FORGING_TEMPLATE = registerItem("durable_forging_template",
+            properties -> new ForgeTemplateItem(properties, ForgePattern.DURABLE));
+    public static final Item SWIFT_FORGING_TEMPLATE = registerItem("swift_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.SWIFT_TOOL, ForgePattern.SWIFT_WEAPON, ForgePattern.SWIFT_ARMOR)));
+    public static final Item LONG_FORGING_TEMPLATE = registerItem("long_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.LONG_TOOL, ForgePattern.LONG_WEAPON)));
+    public static final Item LUCKY_FORGING_TEMPLATE = registerItem("lucky_forging_template",
+            properties -> new ForgeTemplateItem(properties, List.of(ForgePattern.LUCKY_ROD, ForgePattern.LUCKY_ARMOR)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name),

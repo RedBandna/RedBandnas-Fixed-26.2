@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "C": "#minecraft:copper",
+    "S": "minecraft:armadillo_scute",
+    "V": "rbfixed:void_netherite_scrap"
+  },
+  "pattern": [
+    "SCS",
+    "CVC",
+    "SCS"
+  ],
+  "result": {
+    "id": "rbfixed:dwarf_forging_template"
+  }
+}

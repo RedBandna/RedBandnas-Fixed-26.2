@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "H": "minecraft:rabbit_hide",
+    "L": "minecraft:blaze_rod",
+    "R": "minecraft:breeze_rod",
+    "S": "minecraft:stick",
+    "V": "rbfixed:void_netherite_scrap"
+  },
+  "pattern": [
+    "VHL",
+    "HRH",
+    "SHV"
+  ],
+  "result": {
+    "id": "rbfixed:long_forging_template"
+  }
+}

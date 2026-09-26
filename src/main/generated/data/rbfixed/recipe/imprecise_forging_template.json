@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "F": "minecraft:warped_fence",
+    "V": "minecraft:vine"
+  },
+  "pattern": [
+    " FV",
+    "F V",
+    " FV"
+  ],
+  "result": {
+    "id": "rbfixed:imprecise_forging_template"
+  }
+}

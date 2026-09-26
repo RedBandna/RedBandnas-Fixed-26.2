@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "E": "minecraft:end_crystal",
+    "F": "minecraft:rabbit_foot",
+    "Q": "rbfixed:void_quartz"
+  },
+  "pattern": [
+    "QFQ",
+    "FEF",
+    "QFQ"
+  ],
+  "result": {
+    "id": "rbfixed:swift_forging_template"
+  }
+}

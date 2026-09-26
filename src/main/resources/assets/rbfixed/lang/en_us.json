@@ -12,6 +12,7 @@
   "item.rbfixed.void_netherite_scrap": "Void Netherite Scrap",
   "item.rbfixed.void_quartz": "Void Quartz",
   "item.rbfixed.void_redstone": "Void Redstone",
+
   "item.rbfixed.flint_sword": "Flint Sword",
   "item.rbfixed.flint_pickaxe": "Flint Pickaxe",
   "item.rbfixed.flint_shovel": "Flint Shovel",
@@ -36,6 +37,19 @@
   "item.rbfixed.golden_upgrade_smithing_template": "Golden Upgrade Smithing Template",
   "item.rbfixed.diamond_upgrade_smithing_template": "Diamond Upgrade Smithing Template",
   "item.rbfixed.rose_quartz_upgrade_smithing_template": "Rose Quartz Upgrade Smithing Template",
+  "item.rbfixed.short_forging_template": "Short Forging Template",
+  "item.rbfixed.dull_forging_template": "Dull Forging Template",
+  "item.rbfixed.brittle_forging_template": "Brittle Forging Template",
+  "item.rbfixed.imprecise_forging_template": "Imprecise Forging Template",
+  "item.rbfixed.precise_forging_template": "Precise Forging Template",
+  "item.rbfixed.heavy_forging_template": "Heavy Forging Template",
+  "item.rbfixed.light_forging_template": "Light Forging Template",
+  "item.rbfixed.giant_forging_template": "Giant's Forging Template",
+  "item.rbfixed.dwarf_forging_template": "Dwarf's Forging Template",
+  "item.rbfixed.durable_forging_template": "Durable Forging Template",
+  "item.rbfixed.swift_forging_template": "Swift Forging Template",
+  "item.rbfixed.long_forging_template": "Long Forging Template",
+  "item.rbfixed.lucky_forging_template": "Lucky Forging Template",
 
   "item.rbfixed.trowel": "Trowel",
   "item.rbfixed.red_paint_brush": "Red Paint Brush",
@@ -76,13 +90,18 @@
   "block.rbfixed.void_quartz_button": "Void Quartz Button",
   "block.rbfixed.void_redstone_button": "Void Redstone Button",
   "block.rbfixed.nether_forge": "Nether Forge",
+  "block.rbfixed.void_anvil": "Void Anvil",
 
   "effect.rbfixed.syphoned": "Syphoned",
   "effect.rbfixed.syphoned.description": "Causes you to lose maximum health over time",
 
+  "attribute.name.rbfixed.arrow_spread": "Arrow Spread",
+
   "creativemodetab.rbfixed.end_items": "End Items",
   "creativemodetab.rbfixed.end_blocks": "End Blocks",
   "creativemodetab.rbfixed.more_tools": "More Tools",
+  "creativemodetab.rbfixed.upgrade_templates": "Upgrade Templates",
+  "creativemodetab.rbfixed.more_blocks": "More Blocks",
 
   "item.rbfixed.smithing_template.stone_upgrade.applies_to": "Flint Tools, Wooden Tools",
   "item.rbfixed.smithing_template.stone_upgrade.ingredients": "Cobblestone",
@@ -118,6 +137,7 @@
   "advancement.rbfixed.root.title": "RedBandna's Fixed",
   "advancement.rbfixed.root.description": "Advancements from the RedBandna's Fixed mod",
 
-  "container.rbfixed.nether_forge": "Nether Forge"
+  "container.rbfixed.nether_forge": "Nether Forge",
+  "container.forge": "Forge & Name"
 
 }

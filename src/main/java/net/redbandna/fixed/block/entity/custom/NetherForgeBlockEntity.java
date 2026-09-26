@@ -8,7 +8,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.Unit;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.StackedItemContents;
@@ -26,10 +25,12 @@ import net.redbandna.fixed.block.custom.NetherForgeBlock;
 import net.redbandna.fixed.block.entity.ModBlockEntities;
 import net.redbandna.fixed.data.ModDataComponents;
 import net.redbandna.fixed.menu.custom.NetherForgeMenu;
+import net.redbandna.fixed.tags.ModTags;
 
 public class NetherForgeBlockEntity extends BaseContainerBlockEntity implements ExtendedMenuProvider<BlockPos>, StackedContentsCompatible {
     protected static final int SLOT_ITEM = 0;
     protected static final int SLOT_FUEL = 1;
+    public static String prefix = "Malleable ";
     protected NonNullList<ItemStack> items = NonNullList.withSize(2, ItemStack.EMPTY);
     private int litTimeRemaining;
     private int litTotalTime;
@@ -86,13 +87,13 @@ public class NetherForgeBlockEntity extends BaseContainerBlockEntity implements 
             if (!isForgeable(item))
                 litTimeRemaining = 0;
             else if (--litTimeRemaining <= 0) {
-                item.set(ModDataComponents.MALLEABLE, Unit.INSTANCE);
-                item.set(DataComponents.CUSTOM_NAME, Component.nullToEmpty("Malleable " + item.getHoverName().getString()));
+                item.set(ModDataComponents.FORGED, false);
+                item.set(DataComponents.CUSTOM_NAME, Component.nullToEmpty(prefix + item.getHoverName().getString()));
                 items.set(0, item);
                 level.setBlock(pos, state.setValue(NetherForgeBlock.LIT, false), 3);
                 setChanged(level, pos, state);
             }
-        } else if (!fuel.isEmpty() && isForgeable(item)) {
+        } else if (!fuel.isEmpty() && fuel.is(ModTags.Items.FORGE_FUEL_ITEMS) && isForgeable(item)) {
             litTotalTime = litTimeRemaining = getCookingTime(item, fuel);
             Item fuelItem = fuel.getItem();
             fuel.shrink(1);
@@ -110,7 +111,7 @@ public class NetherForgeBlockEntity extends BaseContainerBlockEntity implements 
     }
 
     public static boolean isForgeable(ItemStack item) {
-        return !item.isEmpty() && (item.get(ModDataComponents.MALLEABLE) == null) && item.is(ItemTags.DURABILITY_ENCHANTABLE);
+        return !item.isEmpty() && (item.get(ModDataComponents.FORGED) == null) && item.is(ItemTags.DURABILITY_ENCHANTABLE);
     }
 
     @Override

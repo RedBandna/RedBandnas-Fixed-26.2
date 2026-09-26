@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "C": "minecraft:heavy_core",
+    "G": "minecraft:gold_block"
+  },
+  "pattern": [
+    " G ",
+    "GCG",
+    " G "
+  ],
+  "result": {
+    "id": "rbfixed:heavy_forging_template"
+  }
+}

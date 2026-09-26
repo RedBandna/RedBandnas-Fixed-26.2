@@ -6,7 +6,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.Identifier;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -166,6 +168,105 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                     }
                 });
 
+                shapeless(RecipeCategory.MISC, ModItems.SHORT_FORGING_TEMPLATE)
+                        .requires(Items.STICK).requires(Items.LEATHER)
+                        .unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER))
+                        .group("forging_template").save(output);
+
+                shapeless(RecipeCategory.MISC, ModItems.DULL_FORGING_TEMPLATE)
+                        .requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS).requires(ItemTags.PLANKS)
+                        .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                        .group("forging_template").save(output);
+
+                shapeless(RecipeCategory.MISC, ModItems.BRITTLE_FORGING_TEMPLATE)
+                        .requires(ItemTags.METAL_NUGGETS).requires(ItemTags.METAL_NUGGETS).requires(ItemTags.METAL_NUGGETS).requires(ItemTags.METAL_NUGGETS)
+                        .unlockedBy("has_nuggets", has(ItemTags.METAL_NUGGETS))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.IMPRECISE_FORGING_TEMPLATE)
+                        .pattern(" FV")
+                        .pattern("F V")
+                        .pattern(" FV")
+                        .define('F', Items.WARPED_FENCE).define('V', Items.VINE)
+                        .unlockedBy(getHasName(Items.WARPED_FENCE), has(Items.WARPED_FENCE))
+                        .unlockedBy(getHasName(Items.VINE), has(Items.VINE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.PRECISE_FORGING_TEMPLATE)
+                        .pattern("RWF")
+                        .pattern("W C")
+                        .pattern("FC ")
+                        .define('W', ItemTags.LOGS).define('F', ItemTags.WOODEN_FENCES)
+                        .define('R', Items.RABBIT_HIDE).define('C', Items.COBWEB)
+                        .unlockedBy(getHasName(Items.COBWEB), has(Items.COBWEB))
+                        .unlockedBy(getHasName(Items.RABBIT_HIDE), has(Items.RABBIT_HIDE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.HEAVY_FORGING_TEMPLATE)
+                        .pattern(" G ")
+                        .pattern("GCG")
+                        .pattern(" G ")
+                        .define('G', Items.GOLD_BLOCK).define('C', Items.HEAVY_CORE)
+                        .unlockedBy(getHasName(Items.HEAVY_CORE), has(Items.HEAVY_CORE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.LIGHT_FORGING_TEMPLATE)
+                        .pattern("MFM")
+                        .pattern("FRF")
+                        .pattern("MFM")
+                        .define('F', Items.FEATHER).define('R', Items.REDSTONE).define('M', Items.PHANTOM_MEMBRANE)
+                        .unlockedBy(getHasName(Items.PHANTOM_MEMBRANE), has(Items.PHANTOM_MEMBRANE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.GIANT_FORGING_TEMPLATE)
+                        .pattern("FIF")
+                        .pattern("IGI")
+                        .pattern("FIF")
+                        .define('F', Items.ROTTEN_FLESH).define('I', Items.IRON_BLOCK).define('G', Items.ENCHANTED_GOLDEN_APPLE)
+                        .unlockedBy(getHasName(Items.ENCHANTED_GOLDEN_APPLE), has(Items.ENCHANTED_GOLDEN_APPLE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.DWARF_FORGING_TEMPLATE)
+                        .pattern("SCS")
+                        .pattern("CVC")
+                        .pattern("SCS")
+                        .define('S', Items.ARMADILLO_SCUTE).define('C', ItemTags.COPPER).define('V', ModItems.VOID_NETHERITE_SCRAP)
+                        .unlockedBy(getHasName(ModItems.VOID_NETHERITE_SCRAP), has(ModItems.VOID_NETHERITE_SCRAP))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.DURABLE_FORGING_TEMPLATE)
+                        .pattern("SQS")
+                        .pattern("QEQ")
+                        .pattern("SQS")
+                        .define('S', Items.NETHERITE_SCRAP).define('Q', Items.QUARTZ).define('E', ModItems.VOID_EMERALD)
+                        .unlockedBy(getHasName(ModItems.VOID_EMERALD), has(ModItems.VOID_EMERALD))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.SWIFT_FORGING_TEMPLATE)
+                        .pattern("QFQ")
+                        .pattern("FEF")
+                        .pattern("QFQ")
+                        .define('Q', ModItems.VOID_QUARTZ).define('F', Items.RABBIT_FOOT).define('E', Items.END_CRYSTAL)
+                        .unlockedBy(getHasName(ModItems.VOID_EMERALD), has(ModItems.VOID_EMERALD))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.LONG_FORGING_TEMPLATE)
+                        .pattern("VHL")
+                        .pattern("HRH")
+                        .pattern("SHV")
+                        .define('S', Items.STICK).define('R', Items.BREEZE_ROD).define('L', Items.BLAZE_ROD)
+                        .define('H', Items.RABBIT_HIDE).define('V', ModItems.VOID_NETHERITE_SCRAP)
+                        .unlockedBy(getHasName(ModItems.VOID_EMERALD), has(ModItems.VOID_EMERALD))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.LUCKY_FORGING_TEMPLATE)
+                        .pattern("GFG")
+                        .pattern("FEF")
+                        .pattern("MFM")
+                        .define('G', Items.GHAST_TEAR).define('F', Items.RABBIT_FOOT)
+                        .define('E', Items.ENCHANTED_GOLDEN_APPLE).define('M', Items.GLISTERING_MELON_SLICE)
+                        .unlockedBy(getHasName(ModItems.VOID_EMERALD), has(ModItems.VOID_EMERALD))
+                        .group("forging_template").save(output);
             }
 
             public Item parseTieredItem (String tier, String type) {

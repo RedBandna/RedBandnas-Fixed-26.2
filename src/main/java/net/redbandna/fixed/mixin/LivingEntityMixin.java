@@ -1,13 +1,16 @@
 package net.redbandna.fixed.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.creaking.Creaking;
 import net.minecraft.world.level.Level;
+import net.redbandna.fixed.data.ModAttributes;
 import net.redbandna.fixed.effect.ModEffects;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -29,5 +32,10 @@ public abstract class LivingEntityMixin extends Entity {
         if (source.getEntity() instanceof Creaking) {
             addEffect(new MobEffectInstance(ModEffects.SYPHONED, 80, 0));
         }
+    }
+
+    @ModifyReturnValue(method = "createLivingAttributes", at = @At("RETURN"))
+    private static AttributeSupplier.Builder injectCustomAttributes(AttributeSupplier.Builder original) {
+        return original.add(ModAttributes.ARROW_SPREAD);
     }
 }

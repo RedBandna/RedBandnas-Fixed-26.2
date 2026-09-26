@@ -91,6 +91,8 @@ public class ModBlocks {
 
     public static final Block NETHER_FORGE = registerBlock("nether_forge",
             properties -> new NetherForgeBlock(properties.strength(30f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
+    public static final Block VOID_ANVIL = registerBlock("void_anvil",
+            properties -> new VoidAnvilBlock(properties.strength(80f).requiresCorrectToolForDrops().sound(SoundType.EMPTY)));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name))));

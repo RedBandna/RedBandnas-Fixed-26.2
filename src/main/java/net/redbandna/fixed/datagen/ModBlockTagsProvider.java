@@ -20,6 +20,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
         tag(BlockTags.AIR).add(ModBlocks.getRK(ModBlocks.PURE_VOID_AIR));
 
+        tag(BlockTags.ANVIL).add(ModBlocks.getRK(ModBlocks.VOID_ANVIL));
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_ORE))
                 .add(ModBlocks.getRK(ModBlocks.VOID_ESSENCE_BLOCK))

@@ -7,10 +7,11 @@ import net.minecraft.resources.Identifier;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.block.entity.ModBlockEntities;
 import net.redbandna.fixed.creativemodetab.ModCreativeModeTabs;
+import net.redbandna.fixed.data.ModAttributes;
 import net.redbandna.fixed.data.ModDataComponents;
 import net.redbandna.fixed.effect.ModEffects;
 import net.redbandna.fixed.item.ModItems;
-import net.redbandna.fixed.menu.ModeMenuTypes;
+import net.redbandna.fixed.menu.ModMenuTypes;
 import net.redbandna.fixed.worldgen.custom.ModFeatures;
 import net.redbandna.fixed.worldgen.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -26,10 +27,11 @@ public class RedBandnaSFixed implements ModInitializer {
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModAttributes.registerModAttributes();
 		ModDataComponents.registerDataComponents();
 		ModEffects.registerEffects();
 		ModBlockEntities.registerBlockEntities();
-		ModeMenuTypes.registerModMenuTypes();
+		ModMenuTypes.registerModMenuTypes();
 		ModFeatures.registerModFeatures();
 		ModWorldGeneration.generateModWorldGen();
 	}

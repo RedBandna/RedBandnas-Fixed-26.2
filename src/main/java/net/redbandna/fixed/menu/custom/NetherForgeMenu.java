@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.redbandna.fixed.block.entity.custom.NetherForgeBlockEntity;
 import net.redbandna.fixed.data.ModDataComponents;
-import net.redbandna.fixed.menu.ModeMenuTypes;
+import net.redbandna.fixed.menu.ModMenuTypes;
 import net.redbandna.fixed.tags.ModTags;
 
 public class NetherForgeMenu extends AbstractContainerMenu {
@@ -23,7 +23,7 @@ public class NetherForgeMenu extends AbstractContainerMenu {
     }
 
     public NetherForgeMenu(int containerId, Inventory inventory, BlockEntity entity, ContainerData data) {
-        super(ModeMenuTypes.NETHER_FORGE_MENU, containerId);
+        super(ModMenuTypes.NETHER_FORGE_MENU, containerId);
         blockEntity = (NetherForgeBlockEntity) entity;
         this.data = data;
         this.inventory = blockEntity;
@@ -60,7 +60,7 @@ public class NetherForgeMenu extends AbstractContainerMenu {
             ItemStack stack = slot.getItem();
 
             clicked = stack.copy();
-            if (slotIndex == 0 && stack.get(ModDataComponents.MALLEABLE) != null) {
+            if (slotIndex == 0 && (!isCrafting() || stack.get(ModDataComponents.FORGED) != null)) {
                 if (!this.moveItemStackTo(stack, 2, 38, true)) {
                     return ItemStack.EMPTY;
                 }
