@@ -11,7 +11,7 @@ import net.redbandna.fixed.worldgen.ModPlacedFeatures;
 public class RedBandnaSFixedDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		var pack = fabricDataGenerator.createPack();
+		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModBlockTagsProvider::new);

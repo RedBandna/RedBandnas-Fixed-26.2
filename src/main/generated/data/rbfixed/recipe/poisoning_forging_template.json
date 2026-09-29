@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "F": "minecraft:ochre_froglight",
+    "P": "minecraft:poisonous_potato",
+    "S": "minecraft:fermented_spider_eye"
+  },
+  "pattern": [
+    "PSP",
+    "SFS",
+    "PSP"
+  ],
+  "result": {
+    "id": "rbfixed:poisoning_forging_template"
+  }
+}

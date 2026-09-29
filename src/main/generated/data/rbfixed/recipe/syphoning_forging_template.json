@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "M": "minecraft:pale_moss_block",
+    "R": "minecraft:resin_brick",
+    "S": "rbfixed:void_coal"
+  },
+  "pattern": [
+    "MRM",
+    "RSR",
+    "MRM"
+  ],
+  "result": {
+    "id": "rbfixed:syphoning_forging_template"
+  }
+}

@@ -95,22 +95,22 @@ public class ModBlocks {
             properties -> new VoidAnvilBlock(properties.strength(80f).requiresCorrectToolForDrops().sound(SoundType.EMPTY)));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
-        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name))));
+        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, RedBandnaSFixed.id(name))));
         registerBlockItem(name, toRegister);
-        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name), toRegister);
+        return Registry.register(BuiltInRegistries.BLOCK, RedBandnaSFixed.id(name), toRegister);
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name),
+        Registry.register(BuiltInRegistries.ITEM, RedBandnaSFixed.id(name),
                 new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix()
-                        .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name)))));
+                        .setId(ResourceKey.create(Registries.ITEM, RedBandnaSFixed.id(name)))));
     }
 
     public static ResourceKey<Block> getRK(Block block) {
         return BuiltInRegistries.BLOCK.getResourceKey(block).get();
     }
 
-    public static void registerModBlocks() {
-        RedBandnaSFixed.LOGGER.info("Registering Mod Blocks for " + RedBandnaSFixed.MOD_ID);
+    public static void registerBlocks() {
+        RedBandnaSFixed.LOGGER.info("Registering Blocks for " + RedBandnaSFixed.MOD_ID);
     }
 }

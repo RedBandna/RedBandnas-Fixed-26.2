@@ -25,9 +25,9 @@ public class ModEquipmentAssetProvider implements DataProvider {
 
     private static void bootstrap(BiConsumer<ResourceKey<EquipmentAsset>, EquipmentClientInfo> consumer) {
         consumer.accept(ModArmorMaterials.ROSE_QUARTZ_KEY, EquipmentClientInfo.builder()
-                .addHumanoidLayers(Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "rose_quartz"))
+                .addHumanoidLayers(RedBandnaSFixed.id("rose_quartz"))
                 .addLayers(EquipmentClientInfo.LayerType.HORSE_BODY,
-                        new EquipmentClientInfo.Layer(Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "rose_quartz"))).build());
+                        new EquipmentClientInfo.Layer(RedBandnaSFixed.id("rose_quartz"))).build());
     }
 
     @Override

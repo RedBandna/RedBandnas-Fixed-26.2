@@ -2,13 +2,16 @@ package net.redbandna.fixed.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -17,6 +20,7 @@ import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
 import net.redbandna.fixed.item.crafting.SmithingTransformRecipeBuilderExtension;
 import net.redbandna.fixed.item.custom.PaintBrushItem;
+import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
@@ -168,6 +172,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                     }
                 });
 
+                buildForgingTemplates();
+
+                buildOverwrittenRecipes();
+            }
+
+            private void buildForgingTemplates() {
                 shapeless(RecipeCategory.MISC, ModItems.SHORT_FORGING_TEMPLATE)
                         .requires(Items.STICK).requires(Items.LEATHER)
                         .unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER))
@@ -247,7 +257,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("FEF")
                         .pattern("QFQ")
                         .define('Q', ModItems.VOID_QUARTZ).define('F', Items.RABBIT_FOOT).define('E', Items.END_CRYSTAL)
-                        .unlockedBy(getHasName(ModItems.VOID_EMERALD), has(ModItems.VOID_EMERALD))
+                        .unlockedBy(getHasName(Items.RABBIT_FOOT), has(Items.RABBIT_FOOT))
                         .group("forging_template").save(output);
 
                 shaped(RecipeCategory.MISC, ModItems.LONG_FORGING_TEMPLATE)
@@ -256,7 +266,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("SHV")
                         .define('S', Items.STICK).define('R', Items.BREEZE_ROD).define('L', Items.BLAZE_ROD)
                         .define('H', Items.RABBIT_HIDE).define('V', ModItems.VOID_NETHERITE_SCRAP)
-                        .unlockedBy(getHasName(ModItems.VOID_EMERALD), has(ModItems.VOID_EMERALD))
+                        .unlockedBy(getHasName(ModItems.VOID_NETHERITE_SCRAP), has(ModItems.VOID_NETHERITE_SCRAP))
                         .group("forging_template").save(output);
 
                 shaped(RecipeCategory.MISC, ModItems.LUCKY_FORGING_TEMPLATE)
@@ -265,15 +275,83 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("MFM")
                         .define('G', Items.GHAST_TEAR).define('F', Items.RABBIT_FOOT)
                         .define('E', Items.ENCHANTED_GOLDEN_APPLE).define('M', Items.GLISTERING_MELON_SLICE)
-                        .unlockedBy(getHasName(ModItems.VOID_EMERALD), has(ModItems.VOID_EMERALD))
+                        .unlockedBy(getHasName(Items.ENCHANTED_GOLDEN_APPLE), has(Items.ENCHANTED_GOLDEN_APPLE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.SYPHONING_FORGING_TEMPLATE)
+                        .pattern("MRM")
+                        .pattern("RSR")
+                        .pattern("MRM")
+                        .define('R', Items.RESIN_BRICK).define('M', Items.PALE_MOSS_BLOCK).define('S', ModItems.VOID_COAL)
+                        .unlockedBy(getHasName(Items.PALE_MOSS_BLOCK), has(Items.PALE_MOSS_BLOCK))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.POISONING_FORGING_TEMPLATE)
+                        .pattern("PSP")
+                        .pattern("SFS")
+                        .pattern("PSP")
+                        .define('P', Items.POISONOUS_POTATO).define('S', Items.FERMENTED_SPIDER_EYE).define('F', Items.OCHRE_FROGLIGHT)
+                        .unlockedBy(getHasName(Items.FERMENTED_SPIDER_EYE), has(Items.FERMENTED_SPIDER_EYE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.WITHERING_FORGING_TEMPLATE)
+                        .pattern("DWD")
+                        .pattern("WSW")
+                        .pattern("FWF")
+                        .define('D', Items.DRAGON_BREATH).define('F', Items.FERMENTED_SPIDER_EYE)
+                        .define('S', Items.WITHER_SKELETON_SKULL).define('W', Items.WITHER_ROSE)
+                        .unlockedBy(getHasName(Items.WITHER_ROSE), has(Items.WITHER_ROSE))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.CATALYTIC_FORGING_TEMPLATE)
+                        .pattern("RBR")
+                        .pattern("BCB")
+                        .pattern("RBR")
+                        .define('R', ModItems.VOID_REDSTONE).define('B', Items.BONE_BLOCK).define('C', Items.SCULK_CATALYST)
+                        .unlockedBy(getHasName(Items.SCULK_CATALYST), has(Items.SCULK_CATALYST))
+                        .group("forging_template").save(output);
+
+                shaped(RecipeCategory.MISC, ModItems.UNDERESTIMATED_FORGING_TEMPLATE)
+                        .pattern(" C ")
+                        .pattern("CSC")
+                        .pattern(" C ")
+                        .define('S', ModItems.VOID_NETHERITE_SCRAP).define('C', ModItems.VOID_COPPER_INGOT)
+                        .unlockedBy(getHasName(ModItems.VOID_NETHERITE_SCRAP), has(ModItems.VOID_NETHERITE_SCRAP))
                         .group("forging_template").save(output);
             }
 
-            public Item parseTieredItem (String tier, String type) {
+            private void buildOverwrittenRecipes() {
+
+                RecipeOutput vanillaOutput = new RecipeOutput() {
+                    @Override
+                    public void accept(ResourceKey<Recipe<?>> id, Recipe<?> recipe, @Nullable AdvancementHolder advancement) {
+                        ResourceKey<Recipe<?>> key = ResourceKey.create(Registries.RECIPE, Identifier.withDefaultNamespace(id.identifier().getPath()));
+                        output.accept(key, recipe, advancement);
+                    }
+
+                    @Override
+                    public Advancement.Builder advancement() {
+                        return output.advancement();
+                    }
+
+                    @Override
+                    public void includeRootAdvancement() {}
+                };
+
+                shaped(RecipeCategory.DECORATIONS, Blocks.ENCHANTING_TABLE)
+                        .pattern(" B ")
+                        .pattern("DOD")
+                        .pattern("OOO")
+                        .define('B', Items.BOOK).define('O', Blocks.OBSIDIAN).define('D', ModItems.VOID_DIAMOND)
+                        .unlockedBy(getHasName(ModItems.VOID_DIAMOND), has(ModItems.VOID_DIAMOND))
+                        .save(vanillaOutput);
+            }
+
+            public Item parseTieredItem(String tier, String type) {
                 return BuiltInRegistries.ITEM.get(Identifier.parse(tier + "_" + type)).get().value();
             }
 
-            public void createSmithingUpgradeRecipe (Ingredient templateIngredient, Item baseItem, Item materialItem, int materialCount, Item outItem) {
+            public void createSmithingUpgradeRecipe(Ingredient templateIngredient, Item baseItem, Item materialItem, int materialCount, Item outItem) {
                 ((SmithingTransformRecipeBuilderExtension) SmithingTransformRecipeBuilder.smithing(templateIngredient, Ingredient.of(baseItem), Ingredient.of(materialItem), RecipeCategory.MISC, outItem)).count(materialCount)
                         .unlocks(getHasName(materialItem), has(materialItem)).save(output, BuiltInRegistries.ITEM.getKey(outItem).getPath() + "_from_" + BuiltInRegistries.ITEM.getKey(baseItem).getPath() + "_smithing");
             }

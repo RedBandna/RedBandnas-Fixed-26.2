@@ -6,7 +6,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.redbandna.fixed.worldgen.ModPlacedFeatures;
 
 public class ModWorldGeneration {
-    public static void generateModWorldGen() {
+    public static void generateWorldGen() {
         BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Decoration.UNDERGROUND_ORES,
                 ModPlacedFeatures.VOID_RUPTURE_PLACED_KEY);
     }

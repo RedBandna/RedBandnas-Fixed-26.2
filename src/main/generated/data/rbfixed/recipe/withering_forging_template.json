@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "D": "minecraft:dragon_breath",
+    "F": "minecraft:fermented_spider_eye",
+    "S": "minecraft:wither_skeleton_skull",
+    "W": "minecraft:wither_rose"
+  },
+  "pattern": [
+    "DWD",
+    "WSW",
+    "FWF"
+  ],
+  "result": {
+    "id": "rbfixed:withering_forging_template"
+  }
+}

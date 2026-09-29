@@ -11,7 +11,7 @@ import net.redbandna.fixed.RedBandnaSFixed;
 
 public class NetherForgeScreen extends AbstractContainerScreen<NetherForgeMenu> {
     private static final Identifier GUI_TEXTURE =
-            Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "textures/gui/nether_forge/nether_forge.png");
+            RedBandnaSFixed.id("textures/gui/nether_forge/nether_forge.png");
     private static final Identifier LIT_TEXTURE =
             Identifier.withDefaultNamespace("container/furnace/lit_progress");
 

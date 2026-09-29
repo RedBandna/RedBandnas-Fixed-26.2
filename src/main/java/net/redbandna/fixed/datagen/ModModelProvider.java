@@ -47,7 +47,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         for (Block button : ModBlocks.VOID_BUTTONS) {
             TextureMapping textureMapping = new TextureMapping().put(TextureSlot.TEXTURE, new Material(
-                    Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "block/" + BuiltInRegistries.BLOCK.getKey(button).getPath())));
+                    RedBandnaSFixed.id("block/" + BuiltInRegistries.BLOCK.getKey(button).getPath())));
 
             MultiVariant normal = BlockModelGenerators.plainVariant(ModelTemplates.BUTTON.create(button, textureMapping, blockModelGenerators.modelOutput));
             MultiVariant pressed = BlockModelGenerators.plainVariant(ModelTemplates.BUTTON_PRESSED.create(button, textureMapping, blockModelGenerators.modelOutput));
@@ -114,5 +114,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.SWIFT_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.LONG_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.LUCKY_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.SYPHONING_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.POISONING_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.WITHERING_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.CATALYTIC_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.UNDERESTIMATED_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
     }
 }

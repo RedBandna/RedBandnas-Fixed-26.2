@@ -15,7 +15,7 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_ROSE_QUARTZ_TOOL = createTag("incorrect_for_rose_quartz_tool");
 
         private static TagKey<Block> createTag(String name) {
-            return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name));
+            return TagKey.create(Registries.BLOCK, RedBandnaSFixed.id(name));
         }
     }
 
@@ -26,7 +26,7 @@ public class ModTags {
         public static final TagKey<Item> FORGE_FUEL_ITEMS = createTag("forge_fuel_items");
 
         private static TagKey<Item> createTag(String name) {
-            return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name));
+            return TagKey.create(Registries.ITEM, RedBandnaSFixed.id(name));
         }
     }
 }

@@ -30,6 +30,7 @@
   "item.rbfixed.rose_quartz_leggings": "Rose Quartz Leggings",
   "item.rbfixed.rose_quartz_boots": "Rose Quartz Boots",
   "item.rbfixed.rose_quartz_horse_armor": "Rose Quartz Horse Armor",
+
   "item.rbfixed.stone_upgrade_smithing_template": "Stone Upgrade Smithing Template",
   "item.rbfixed.copper_upgrade_smithing_template": "Copper Upgrade Smithing Template",
   "item.rbfixed.chainmail_upgrade_smithing_template": "Chainmail Upgrade Smithing Template",
@@ -50,6 +51,11 @@
   "item.rbfixed.swift_forging_template": "Swift Forging Template",
   "item.rbfixed.long_forging_template": "Long Forging Template",
   "item.rbfixed.lucky_forging_template": "Lucky Forging Template",
+  "item.rbfixed.syphoning_forging_template": "Syphoning Forging Template",
+  "item.rbfixed.poisoning_forging_template": "Poisoning Forging Template",
+  "item.rbfixed.withering_forging_template": "Withering Forging Template",
+  "item.rbfixed.catalytic_forging_template": "Catalytic Forging Template",
+  "item.rbfixed.underestimated_forging_template": "Underestimated Forging Template",
 
   "item.rbfixed.trowel": "Trowel",
   "item.rbfixed.red_paint_brush": "Red Paint Brush",
@@ -138,6 +144,20 @@
   "advancement.rbfixed.root.description": "Advancements from the RedBandna's Fixed mod",
 
   "container.rbfixed.nether_forge": "Nether Forge",
-  "container.forge": "Forge & Name"
+  "container.forge": "Forge & Name",
+  "commands.forge.failed": "Nothing changed. Targets either have no item in their hands or the forge pattern could not be applied",
+  "commands.forge.success.single": "Applied Forge Pattern to",
+  "commands.forge.success": "Applied Forge patterns",
+  "item.forging_template.applies_to": "Applies to:",
+  "item.forging_template.enchantable.durability": "All Equipment",
+  "item.forging_template.enchantable.mining": "Tools",
+  "item.forging_template.enchantable.weapon": "Weapons",
+  "item.forging_template.enchantable.armor": "Armor",
+  "item.forging_template.enchantable.bow": "Bows",
+  "item.forging_template.enchantable.crossbow": "Crossbows",
+  "item.forging_template.enchantable.trident": "Tridents",
+  "item.forging_template.enchantable.fishing": "Fishing Rods",
+  "item.forging_template.enchantable.foot_armor": "Boots",
+  "item.forging_template": "Forging Template"
 
 }

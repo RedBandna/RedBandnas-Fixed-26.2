@@ -12,7 +12,7 @@ import net.redbandna.fixed.tags.ModTags;
 
 public class ModArmorMaterials {
     public static final ResourceKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = ResourceKey.createRegistryKey(Identifier.withDefaultNamespace("equipment_asset"));
-    public static final ResourceKey<EquipmentAsset> ROSE_QUARTZ_KEY = ResourceKey.create(REGISTRY_KEY, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "rose_quartz"));
+    public static final ResourceKey<EquipmentAsset> ROSE_QUARTZ_KEY = ResourceKey.create(REGISTRY_KEY, RedBandnaSFixed.id("rose_quartz"));
 
     public static final ArmorMaterial ROSE_QUARTZ = new ArmorMaterial(238,
             ArmorMaterials.makeDefense(2, 4, 6, 2, 10),

@@ -107,7 +107,7 @@ public class NetherForgeBlockEntity extends BaseContainerBlockEntity implements 
     }
 
     private static int getCookingTime(ItemStack item, ItemStack fuel) {
-        return 100;
+        return 1000;
     }
 
     public static boolean isForgeable(ItemStack item) {

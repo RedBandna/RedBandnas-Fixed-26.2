@@ -8,9 +8,9 @@ import net.redbandna.fixed.RedBandnaSFixed;
 
 public class ModFeatures {
     public static final Feature<VoidRuptureConfig> VOID_RUPTURE = Registry.register(BuiltInRegistries.FEATURE,
-            Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "void_rupture"), new VoidRuptureFeature(VoidRuptureConfig.CODEC));
+            RedBandnaSFixed.id("void_rupture"), new VoidRuptureFeature(VoidRuptureConfig.CODEC));
 
-    public static void registerModFeatures() {
+    public static void registerFeatures() {
         RedBandnaSFixed.LOGGER.info("Registering Features for " + RedBandnaSFixed.MOD_ID);
     }
 }

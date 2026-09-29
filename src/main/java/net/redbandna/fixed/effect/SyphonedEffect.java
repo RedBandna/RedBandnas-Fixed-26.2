@@ -23,7 +23,7 @@ public class SyphonedEffect extends MobEffect {
             return super.applyEffectTick(serverLevel, mob, amplification);
 
         double amount = -1;
-        Identifier syphoned = Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "effect.syphoned");
+        Identifier syphoned = RedBandnaSFixed.id("effect.syphoned");
         AttributeModifier instance = mob.getAttribute(Attributes.MAX_HEALTH).getModifier(syphoned);
         if (instance != null) {
             amount += instance.amount();
@@ -41,7 +41,7 @@ public class SyphonedEffect extends MobEffect {
 
     @Override
     public void onEffectRemoved(MobEffectInstance effectInstance, LivingEntity entity) {
-        entity.getAttribute(Attributes.MAX_HEALTH).removeModifier(Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "effect.syphoned"));
+        entity.getAttribute(Attributes.MAX_HEALTH).removeModifier(RedBandnaSFixed.id("effect.syphoned"));
         super.onEffectRemoved(effectInstance, entity);
     }
 }

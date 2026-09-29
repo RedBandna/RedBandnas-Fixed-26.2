@@ -14,13 +14,13 @@ import net.redbandna.fixed.menu.custom.VoidAnvilMenu;
 
 public class ModMenuTypes {
     public static final MenuType<NetherForgeMenu> NETHER_FORGE_MENU =
-            Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "nether_forge_menu"),
+            Registry.register(BuiltInRegistries.MENU, RedBandnaSFixed.id("nether_forge_menu"),
                     new ExtendedMenuType<>(NetherForgeMenu::new, BlockPos.STREAM_CODEC));
     public static final MenuType<VoidAnvilMenu> VOID_ANVIL_MENU =
-            Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, "void_anvil_menu"),
+            Registry.register(BuiltInRegistries.MENU, RedBandnaSFixed.id("void_anvil_menu"),
                     new MenuType<>(VoidAnvilMenu::new, FeatureFlags.VANILLA_SET));
 
-    public static void registerModMenuTypes() {
-        RedBandnaSFixed.LOGGER.info("Registering Mod Menu Types for " + RedBandnaSFixed.MOD_ID);
+    public static void registerMenuTypes() {
+        RedBandnaSFixed.LOGGER.info("Registering Menu Types for " + RedBandnaSFixed.MOD_ID);
     }
 }

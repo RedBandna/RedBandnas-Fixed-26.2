@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "B": "minecraft:bone_block",
+    "C": "minecraft:sculk_catalyst",
+    "R": "rbfixed:void_redstone"
+  },
+  "pattern": [
+    "RBR",
+    "BCB",
+    "RBR"
+  ],
+  "result": {
+    "id": "rbfixed:catalytic_forging_template"
+  }
+}

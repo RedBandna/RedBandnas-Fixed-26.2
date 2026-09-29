@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "forging_template",
+  "key": {
+    "C": "rbfixed:void_copper_ingot",
+    "S": "rbfixed:void_netherite_scrap"
+  },
+  "pattern": [
+    " C ",
+    "CSC",
+    " C "
+  ],
+  "result": {
+    "id": "rbfixed:underestimated_forging_template"
+  }
+}

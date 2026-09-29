@@ -27,7 +27,7 @@ public class ModPlacedFeatures {
     }
 
     private static ResourceKey<PlacedFeature> registryKey(String name) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name));
+        return ResourceKey.create(Registries.PLACED_FEATURE, RedBandnaSFixed.id(name));
     }
 
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,

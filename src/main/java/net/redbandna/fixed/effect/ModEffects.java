@@ -13,7 +13,7 @@ public class ModEffects {
             new SyphonedEffect(MobEffectCategory.HARMFUL, 0X583012));
 
     private static Holder<MobEffect> registerMobEffect(String name, MobEffect effect) {
-        return Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(RedBandnaSFixed.MOD_ID, name), effect);
+        return Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, RedBandnaSFixed.id(name), effect);
     }
 
     public static void registerEffects() {
