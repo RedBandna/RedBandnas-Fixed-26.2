@@ -13,7 +13,6 @@ import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.redbandna.fixed.RedBandnaSFixed;
@@ -92,6 +91,15 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_LEGGINGS, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
         itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_BOOTS, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
         itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_HORSE_ARMOR, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModelGenerators.generateFlatItem(ModItems.LEATHER_BRACERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.COPPER_BRACERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.CHAINMAIL_BRACERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.IRON_BRACERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.GOLDEN_BRACERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.DIAMOND_BRACERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_BRACERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.NETHERITE_BRACERS, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(ModItems.STONE_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.COPPER_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);

@@ -12,6 +12,7 @@ import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.attribute.ModAttributes;
 import net.redbandna.fixed.data.ModDataComponents;
 import net.redbandna.fixed.effect.ModEffects;
+import net.redbandna.fixed.tags.ModTags;
 
 import java.util.List;
 
@@ -26,6 +27,9 @@ public class ModForgePatterns {
     public static ForgePattern SHORT_TRIDENT = new ForgePattern.Attributes(0, "Short", ItemTags.TRIDENT_ENCHANTABLE, List.of(
             new ForgePattern.ModifierTemplate(Attributes.BLOCK_INTERACTION_RANGE, -1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.MAINHAND),
             new ForgePattern.ModifierTemplate(Attributes.ENTITY_INTERACTION_RANGE, -1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.MAINHAND)));
+    public static ForgePattern SHORT_BRACERS = new ForgePattern.Attributes(0, "Short", ModTags.Items.BRACER_ENCHANTABLE, List.of(
+            new ForgePattern.ModifierTemplate(Attributes.BLOCK_INTERACTION_RANGE, -1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.RBFIXED_ARMS),
+            new ForgePattern.ModifierTemplate(Attributes.ENTITY_INTERACTION_RANGE, -1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.RBFIXED_ARMS)));
 
     public static ForgePattern DULL_TOOL = new ForgePattern.Attributes(0, "Dull", ItemTags.MINING_ENCHANTABLE, List.of(
             new ForgePattern.ModifierTemplate(Attributes.BLOCK_BREAK_SPEED, -1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.MAINHAND),
@@ -91,6 +95,9 @@ public class ModForgePatterns {
     public static ForgePattern LONG_TRIDENT = new ForgePattern.Attributes(15, "Long", ItemTags.TRIDENT_ENCHANTABLE, List.of(
             new ForgePattern.ModifierTemplate(Attributes.BLOCK_INTERACTION_RANGE, 1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.MAINHAND),
             new ForgePattern.ModifierTemplate(Attributes.ENTITY_INTERACTION_RANGE, 1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.MAINHAND)));
+    public static ForgePattern LONG_BRACERS = new ForgePattern.Attributes(15, "Long", ModTags.Items.BRACER_ENCHANTABLE, List.of(
+            new ForgePattern.ModifierTemplate(Attributes.BLOCK_INTERACTION_RANGE, 1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.RBFIXED_ARMS),
+            new ForgePattern.ModifierTemplate(Attributes.ENTITY_INTERACTION_RANGE, 1.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.RBFIXED_ARMS)));
 
     public static ForgePattern LUCKY_ROD = new ForgePattern.Attributes(15, "Lucky", ItemTags.FISHING_ENCHANTABLE, List.of(
             new ForgePattern.ModifierTemplate(Attributes.LUCK, 3.0, AttributeModifier.Operation.ADD_VALUE, EquipmentSlotGroup.HAND)));

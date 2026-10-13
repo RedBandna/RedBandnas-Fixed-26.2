@@ -32,6 +32,7 @@ public class RedBandnaSFixed implements ModInitializer {
 
 		ModCreativeModeTabs.registerCreativeModeTabs();
 		ModItems.registerItems();
+		ModItems.modifyVanillaItems();
 		ModBlocks.registerBlocks();
 		ModAttributes.registerAttributes();
 		ModDataComponents.registerDataComponents();

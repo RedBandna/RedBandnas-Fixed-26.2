@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "addition_count": 2,
+  "base": "rbfixed:iron_bracers",
+  "result": {
+    "id": "rbfixed:diamond_bracers"
+  },
+  "template": "rbfixed:diamond_upgrade_smithing_template"
+}

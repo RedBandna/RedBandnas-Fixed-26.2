@@ -23,6 +23,7 @@ public class ModTags {
         public static final TagKey<Item> VOID_MINERALS = createTag("void_minerals");
         public static final TagKey<Item> FLINT_REPAIR = createTag("flint_repair");
         public static final TagKey<Item> ROSE_QUARTZ_REPAIR = createTag("rose_quartz_repair");
+        public static final TagKey<Item> BRACER_ENCHANTABLE = createTag("bracer_enchantable");
         public static final TagKey<Item> FORGE_FUEL_ITEMS = createTag("forge_fuel_items");
 
         private static TagKey<Item> createTag(String name) {

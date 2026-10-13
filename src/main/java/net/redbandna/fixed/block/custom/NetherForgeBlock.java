@@ -68,8 +68,7 @@ public class NetherForgeBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> type) {
-        if (level.isClientSide())
-            return null;
+        if (level.isClientSide()) return null;
         return createTickerHelper(type, ModBlockEntities.NETHER_FORGE_BE,
                 (level1, pos, state, entity) -> entity.tick((ServerLevel) level1, pos, state));
     }

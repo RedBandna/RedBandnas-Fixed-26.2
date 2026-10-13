@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.ModBlocks;
+import net.redbandna.fixed.block.entity.custom.CorruptedBeaconBlockEntity;
 import net.redbandna.fixed.block.entity.custom.EndRelayBlockEntity;
 import net.redbandna.fixed.block.entity.custom.NetherForgeBlockEntity;
 
@@ -18,6 +19,10 @@ public class ModBlockEntities {
     public static final BlockEntityType<NetherForgeBlockEntity> NETHER_FORGE_BE =
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, RedBandnaSFixed.id("nether_forge_be"),
                     FabricBlockEntityTypeBuilder.create(NetherForgeBlockEntity::new, ModBlocks.NETHER_FORGE).build());
+
+    public static final BlockEntityType<CorruptedBeaconBlockEntity> CORRUPTED_BEACON_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, RedBandnaSFixed.id("corrupted_beacon_be"),
+                    FabricBlockEntityTypeBuilder.create(CorruptedBeaconBlockEntity::new, ModBlocks.CORRUPTED_BEACON).build());
 
     public static void registerBlockEntities() {
         RedBandnaSFixed.LOGGER.info("Registering Block Entities for " + RedBandnaSFixed.MOD_ID);

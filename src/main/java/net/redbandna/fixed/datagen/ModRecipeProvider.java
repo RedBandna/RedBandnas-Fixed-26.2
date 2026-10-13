@@ -1,5 +1,6 @@
 package net.redbandna.fixed.datagen;
 
+import com.llamalad7.mixinextras.lib.apache.commons.StringUtils;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.Advancement;
@@ -16,9 +17,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
-import net.redbandna.fixed.item.crafting.SmithingTransformRecipeBuilderExtension;
+import net.redbandna.fixed.extension.crafting.SmithingTransformRecipeBuilderExtension;
 import net.redbandna.fixed.item.custom.PaintBrushItem;
 import org.jspecify.annotations.Nullable;
 
@@ -36,28 +38,60 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(registries, output) {
             @Override
             public void buildRecipes() {
-                List<ItemLike> RBFIXED_SMELTABLES = List.of(ModBlocks.VOID_ESSENCE_ORE);
 
+                List<ItemLike> RBFIXED_SMELTABLES = List.of(ModBlocks.VOID_ESSENCE_ORE);
                 oreSmelting(RBFIXED_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, ModItems.VOID_ESSENCE, 0.3f, 200, "void_essence");
                 oreBlasting(RBFIXED_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, ModItems.VOID_ESSENCE, 0.3f, 100, "void_essence");
 
+                shaped(RecipeCategory.TRANSPORTATION, ModBlocks.END_RELAY)
+                        .pattern("OEO")
+                        .pattern("ALA")
+                        .pattern("OLO")
+                        .define('O', Blocks.OBSIDIAN).define('E', Items.ENDER_EYE)
+                        .define('A', ModItems.VOID_AMETHYST_SHARD).define('L', ModItems.VOID_LAPIS_LAZULI)
+                        .unlockedBy(getHasName(ModItems.VOID_LAPIS_LAZULI), has(ModItems.VOID_LAPIS_LAZULI))
+                        .save((output));
+
+                shaped(RecipeCategory.MISC, ModBlocks.NETHER_FORGE)
+                        .pattern("NNN")
+                        .pattern("NCN")
+                        .pattern("BBB")
+                        .define('N', Items.NETHERITE_INGOT).define('B', Blocks.RED_NETHER_BRICKS)
+                        .define('C', ModBlocks.CORRUPTED_BEACON)
+                        .unlockedBy(getHasName(ModBlocks.CORRUPTED_BEACON), has(ModBlocks.CORRUPTED_BEACON))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.Trowel)
+                        .pattern(" C")
+                        .pattern("CS")
+                        .pattern(" S")
+                        .define('C', Blocks.COBBLESTONE)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(Blocks.COBBLESTONE), has(Blocks.COBBLESTONE))
+                        .save(output);
+
+                ModItems.PAINT_BRUSH.forEach(paint_brush -> {
+                    shapeless(RecipeCategory.TOOLS, paint_brush)
+                            .requires(Items.DYE.pick(((PaintBrushItem)paint_brush).dyeColor), 8)
+                            .requires(Items.BRUSH)
+                            .unlockedBy(getHasName(Items.BRUSH), has(Items.BRUSH))
+                            .group("paint_brushes")
+                            .save(output);
+                });
+
+                buildVoidFamilyRecipes();
+                buildEquipmentRecipes();
+                buildForgingTemplates();
+                buildOverwrittenRecipes();
+            }
+
+            private void buildVoidFamilyRecipes() {
                 nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.VOID_ESSENCE, RecipeCategory.MISC, ModItems.PURE_VOID_ESSENCE, "pure_essence_packing",
                         "pure_void_essence", "pure_essence_unpacking", "void_essence");
                 nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.PURE_VOID_ESSENCE, RecipeCategory.MISC, ModBlocks.VOID_ESSENCE_BLOCK, "essence_block_packing",
                         "void_essence_block", "essence_block_unpacking", "pure_void_essence");
                 nineBlockStorageRecipes(RecipeCategory.MISC, ModBlocks.VOID_ESSENCE_BLOCK, RecipeCategory.MISC, ModBlocks.PURE_VOID_ESSENCE_BLOCK, "pure_essence_block_packing",
                         "pure_void_essence_block", "pure_essence_block_unpacking", "void_essence_block");
-
-                shaped(RecipeCategory.TRANSPORTATION, ModBlocks.END_RELAY)
-                        .pattern("OEO")
-                        .pattern("ALA")
-                        .pattern("OLO")
-                        .define('O', Blocks.OBSIDIAN)
-                        .define('E', Items.ENDER_EYE)
-                        .define('A', ModItems.VOID_AMETHYST_SHARD)
-                        .define('L', ModItems.VOID_LAPIS_LAZULI)
-                        .unlockedBy(getHasName(ModItems.VOID_LAPIS_LAZULI), has(ModItems.VOID_LAPIS_LAZULI))
-                        .save((output));
 
                 stairBuilder(ModBlocks.VOID_ESSENCE_STAIRS, Ingredient.of(ModBlocks.VOID_ESSENCE_BLOCK))
                         .unlockedBy(getHasName(ModBlocks.VOID_ESSENCE_BLOCK), has(ModBlocks.VOID_ESSENCE_BLOCK))
@@ -91,24 +125,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 buildVoidMineralRecipe(ModItems.VOID_NETHERITE_SCRAP, Items.REDSTONE, output);
                 buildVoidMineralRecipe(ModItems.VOID_QUARTZ, Items.REDSTONE, output);
                 buildVoidMineralRecipe(ModItems.VOID_REDSTONE, Items.REDSTONE, output);
+            }
 
-                shaped(RecipeCategory.TOOLS, ModItems.Trowel)
-                        .pattern(" C")
-                        .pattern("CS")
-                        .pattern(" S")
-                        .define('C', Blocks.COBBLESTONE)
-                        .define('S', Items.STICK)
-                        .unlockedBy(getHasName(Blocks.COBBLESTONE), has(Blocks.COBBLESTONE))
-                        .save(output);
-
-                ModItems.PAINT_BRUSH.forEach(paint_brush -> {
-                    shapeless(RecipeCategory.TOOLS, paint_brush)
-                            .requires(Items.DYE.pick(((PaintBrushItem)paint_brush).dyeColor), 8)
-                            .requires(Items.BRUSH)
-                            .unlockedBy(getHasName(Items.BRUSH), has(Items.BRUSH))
-                            .group("paint_brushes")
-                            .save(output);
-                });
+            private void buildEquipmentRecipes() {
 
                 shaped(RecipeCategory.COMBAT, ModItems.FLINT_SWORD)
                         .pattern("F")
@@ -140,6 +159,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("S  ")
                         .define('F', Items.FLINT).define('S', Items.STICK).unlockedBy(getHasName(Items.FLINT), has(Items.FLINT)).save(output);
 
+                shaped(RecipeCategory.COMBAT, ModItems.LEATHER_BRACERS)
+                        .pattern("# #").define('#', Items.LEATHER).unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER)).save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.COPPER_BRACERS)
+                        .pattern("# #").define('#', Items.COPPER_INGOT).unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.IRON_BRACERS)
+                        .pattern("# #").define('#', Items.IRON_INGOT).unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT)).save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.GOLDEN_BRACERS)
+                        .pattern("# #").define('#', Items.GOLD_INGOT).unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT)).save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.DIAMOND_BRACERS)
+                        .pattern("# #").define('#', Items.DIAMOND).unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND)).save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.NETHERITE_BRACERS)
+                        .pattern("# #").define('#', Items.NETHERITE_INGOT).unlockedBy(getHasName(Items.NETHERITE_INGOT), has(Items.NETHERITE_INGOT)).save(output);
+
                 List<Map.Entry<String, String>> Upgrades = List.of(
                         Map.entry("rbfixed:flint", "stone"), Map.entry("wooden", "stone"), Map.entry("wooden", "copper"), Map.entry("stone", "copper"), Map.entry("stone", "iron"),
                         Map.entry("leather", "chainmail"), Map.entry("copper", "chainmail"), Map.entry("chainmail", "iron"),
@@ -165,16 +197,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "spear"), materialItem, 1 + bonus, parseTieredItem(out, "spear"));
                     }
                     if (List.of("leather", "copper", "chainmail", "iron", "golden", "diamond", "rbfixed:rose_quartz").contains(base)) {
+                        RedBandnaSFixed.LOGGER.info(base + ", " + out);
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "helmet"), materialItem, 5 + bonus, parseTieredItem(out, "helmet"));
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "chestplate"), materialItem, 8 + bonus, parseTieredItem(out, "chestplate"));
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "leggings"), materialItem, 7 + bonus, parseTieredItem(out, "leggings"));
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "boots"), materialItem, 4 + bonus, parseTieredItem(out, "boots"));
+                        createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "bracers"), materialItem, 2 + bonus, parseTieredItem(out, "bracers"));
                     }
                 });
-
-                buildForgingTemplates();
-
-                buildOverwrittenRecipes();
             }
 
             private void buildForgingTemplates() {
@@ -345,9 +375,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('B', Items.BOOK).define('O', Blocks.OBSIDIAN).define('D', ModItems.VOID_DIAMOND)
                         .unlockedBy(getHasName(ModItems.VOID_DIAMOND), has(ModItems.VOID_DIAMOND))
                         .save(vanillaOutput);
+
+                shaped(RecipeCategory.DECORATIONS, Blocks.JUKEBOX)
+                        .pattern("#A#")
+                        .pattern("#X#")
+                        .pattern("###")
+                        .define('#', ItemTags.PLANKS).define('X', Items.DIAMOND)
+                        .define('A', Items.AMETHYST_SHARD)
+                        .unlockedBy("has_diamond", has(Items.DIAMOND))
+                        .save(vanillaOutput);
+
+                oreBlasting(List.of(Blocks.RAW_COPPER_BLOCK), RecipeCategory.MISC, CookingBookCategory.MISC, Blocks.COPPER_BLOCK.weathering().unaffected(),3.8f, 600, "copper_block");
+                oreBlasting(List.of(Blocks.RAW_GOLD_BLOCK), RecipeCategory.MISC, CookingBookCategory.MISC, Blocks.GOLD_BLOCK,4.8f, 600, "copper_block");
+                oreBlasting(List.of(Blocks.RAW_IRON_BLOCK), RecipeCategory.MISC, CookingBookCategory.MISC, Blocks.IRON_BLOCK,4.5f, 600, "copper_block");
             }
 
             public Item parseTieredItem(String tier, String type) {
+                if (type.equals("bracers"))
+                    return BuiltInRegistries.ITEM.get(RedBandnaSFixed.id(StringUtils.removeStart(tier, RedBandnaSFixed.MOD_ID + ":") + "_bracers")).get().value();
                 return BuiltInRegistries.ITEM.get(Identifier.parse(tier + "_" + type)).get().value();
             }
 

@@ -3,16 +3,23 @@
   "package": "net.redbandna.fixed.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "AbstractArrowMixin",
-    "AnvilBlockMixin",
-    "ItemStackMixin",
-    "LivingEntityMixin",
-    "SmithingMenuMixin",
-    "SmithingTransformRecipeBuilderMixin",
-    "SmithingTransformRecipeMixin"
+    "entity.AbstractArrowMixin",
+    "entity.ItemStackMixin",
+    "entity.LivingEntityMixin",
+    "inventory.EquipmentSlotGroupMixin",
+    "inventory.EquipmentSlotMixin",
+    "inventory.InventoryMenuMixin",
+    "inventory.InventoryMixin",
+    "menu.AnvilBlockMixin",
+    "menu.SmithingMenuMixin",
+    "menu.SmithingTransformRecipeBuilderMixin",
+    "menu.SmithingTransformRecipeMixin",
+    "worldgen.MonsterThroneMixin"
   ],
   "client": [
-    "ServerGamePacketListenerImplMixin"
+    "inventory.CreativeModeInventoryScreenMixin",
+    "inventory.InventoryScreenMixin",
+    "menu.ServerGamePacketListenerImplMixin"
   ],
   "injectors": {
     "defaultRequire": 1

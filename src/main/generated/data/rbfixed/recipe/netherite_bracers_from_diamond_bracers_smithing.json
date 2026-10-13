@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:netherite_ingot",
+  "addition_count": 2,
+  "base": "rbfixed:diamond_bracers",
+  "result": {
+    "id": "rbfixed:netherite_bracers"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

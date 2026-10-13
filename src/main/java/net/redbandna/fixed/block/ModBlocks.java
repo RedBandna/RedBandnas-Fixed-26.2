@@ -94,6 +94,10 @@ public class ModBlocks {
     public static final Block VOID_ANVIL = registerBlock("void_anvil",
             properties -> new VoidAnvilBlock(properties.strength(80f).requiresCorrectToolForDrops().sound(SoundType.EMPTY)));
 
+    public static final Block CORRUPTED_BEACON = registerBlock("corrupted_beacon",
+            properties -> new CorruptedBeaconBlock(properties.mapColor(MapColor.GOLD).instrument(NoteBlockInstrument.HAT)
+                    .lightLevel(state -> 15).noOcclusion().strength(3f).isRedstoneConductor(Blocks::never)));
+
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, RedBandnaSFixed.id(name))));
         registerBlockItem(name, toRegister);

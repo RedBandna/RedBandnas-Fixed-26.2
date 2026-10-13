@@ -45,6 +45,23 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
         tag(ModTags.Items.FLINT_REPAIR).add(ItemIds.FLINT);
         tag(ModTags.Items.ROSE_QUARTZ_REPAIR).add(ModItems.getRK(ModItems.VOID_QUARTZ));
 
+        tag(ModTags.Items.BRACER_ENCHANTABLE)
+                .add(ModItems.getRK(ModItems.LEATHER_BRACERS))
+                .add(ModItems.getRK(ModItems.COPPER_BRACERS))
+                .add(ModItems.getRK(ModItems.CHAINMAIL_BRACERS))
+                .add(ModItems.getRK(ModItems.IRON_BRACERS))
+                .add(ModItems.getRK(ModItems.GOLDEN_BRACERS))
+                .add(ModItems.getRK(ModItems.DIAMOND_BRACERS))
+                .add(ModItems.getRK(ModItems.ROSE_QUARTZ_BRACERS))
+                .add(ModItems.getRK(ModItems.NETHERITE_BRACERS));
+
+        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .addTag(ModTags.Items.BRACER_ENCHANTABLE);
+        tag(ItemTags.EQUIPPABLE_ENCHANTABLE)
+                .addTag(ModTags.Items.BRACER_ENCHANTABLE);
+        tag(ItemTags.VANISHING_ENCHANTABLE)
+                .addTag(ModTags.Items.BRACER_ENCHANTABLE);
+
         tag(ModTags.Items.FORGE_FUEL_ITEMS)
                 .add(ItemIds.LAVA_BUCKET)
                 .add(ItemIds.BLAZE_ROD)

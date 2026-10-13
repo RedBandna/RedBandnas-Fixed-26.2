@@ -1,7 +1,9 @@
 package net.redbandna.fixed.item;
 
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -9,8 +11,12 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.Util;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.ColorCollection;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.item.custom.ForgeTemplateItem;
@@ -84,6 +90,15 @@ public class ModItems {
     public static final Item ROSE_QUARTZ_HORSE_ARMOR = registerItem("rose_quartz_horse_armor",
             properties -> new Item(properties.horseArmor(ModArmorMaterials.ROSE_QUARTZ)));
 
+    public static final Item LEATHER_BRACERS = registerBracerItem("leather_bracers", ArmorMaterials.LEATHER);
+    public static final Item COPPER_BRACERS = registerBracerItem("copper_bracers", ArmorMaterials.COPPER);
+    public static final Item CHAINMAIL_BRACERS = registerBracerItem("chainmail_bracers", ArmorMaterials.CHAINMAIL);
+    public static final Item IRON_BRACERS = registerBracerItem("iron_bracers", ArmorMaterials.IRON);
+    public static final Item GOLDEN_BRACERS = registerBracerItem("golden_bracers", ArmorMaterials.GOLD);
+    public static final Item DIAMOND_BRACERS = registerBracerItem("diamond_bracers", ArmorMaterials.DIAMOND);
+    public static final Item ROSE_QUARTZ_BRACERS = registerBracerItem("rose_quartz_bracers", ModArmorMaterials.ROSE_QUARTZ);
+    public static final Item NETHERITE_BRACERS = registerBracerItem("netherite_bracers", ArmorMaterials.NETHERITE);
+
     public static final Item STONE_UPGRADE_SMITHING_TEMPLATE = registerItem("stone_upgrade_smithing_template",
             properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "stone", true, false));
     public static final Item COPPER_UPGRADE_SMITHING_TEMPLATE = registerItem("copper_upgrade_smithing_template",
@@ -100,7 +115,8 @@ public class ModItems {
             properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "rose_quartz", true, true));
 
     public static final Item SHORT_FORGING_TEMPLATE = registerItem("short_forging_template",
-            properties -> new ForgeTemplateItem(properties, List.of(ModForgePatterns.SHORT_TOOL, ModForgePatterns.SHORT_WEAPON, ModForgePatterns.SHORT_TRIDENT)));
+            properties -> new ForgeTemplateItem(properties, List.of(
+                    ModForgePatterns.SHORT_TOOL, ModForgePatterns.SHORT_WEAPON, ModForgePatterns.SHORT_TRIDENT, ModForgePatterns.SHORT_BRACERS)));
     public static final Item DULL_FORGING_TEMPLATE = registerItem("dull_forging_template",
             properties -> new ForgeTemplateItem(properties, List.of(ModForgePatterns.DULL_TOOL, ModForgePatterns.DULL_WEAPON, ModForgePatterns.DULL_TRIDENT)));
     public static final Item BRITTLE_FORGING_TEMPLATE = registerItem("brittle_forging_template",
@@ -122,7 +138,8 @@ public class ModItems {
     public static final Item SWIFT_FORGING_TEMPLATE = registerItem("swift_forging_template",
             properties -> new ForgeTemplateItem(properties, List.of(ModForgePatterns.SWIFT_TOOL, ModForgePatterns.SWIFT_WEAPON, ModForgePatterns.SWIFT_ARMOR)));
     public static final Item LONG_FORGING_TEMPLATE = registerItem("long_forging_template",
-            properties -> new ForgeTemplateItem(properties, List.of(ModForgePatterns.LONG_TOOL, ModForgePatterns.LONG_WEAPON, ModForgePatterns.LONG_TRIDENT)));
+            properties -> new ForgeTemplateItem(properties, List.of(
+                    ModForgePatterns.LONG_TOOL, ModForgePatterns.LONG_WEAPON, ModForgePatterns.LONG_TRIDENT, ModForgePatterns.LONG_BRACERS)));
     public static final Item LUCKY_FORGING_TEMPLATE = registerItem("lucky_forging_template",
             properties -> new ForgeTemplateItem(properties, List.of(ModForgePatterns.LUCKY_ROD, ModForgePatterns.LUCKY_ARMOR)));
     public static final Item SYPHONING_FORGING_TEMPLATE = registerItem("syphoning_forging_template",
@@ -150,6 +167,13 @@ public class ModItems {
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, RedBandnaSFixed.id(name))), color));
     }
 
+    private static Item registerBracerItem(String name, ArmorMaterial material) {
+        return registerItem(name, properties -> new Item(properties.durability(material.durability() * 10)
+                .component(DataComponents.EQUIPPABLE, Equippable.builder(EquipmentSlot.RBFIXED_ARMS).setEquipSound(material.equipSound()).setAsset(material.assetId()).build())
+                .repairable(material.repairIngredient())
+        ));
+    }
+
     private static SmithingTemplateItem createUpgradeTemplate (Item.Properties properties, String tier, boolean tool, boolean armor) {
         return new SmithingTemplateItem(
                 smithingTemplateTranslatable(tier, "applies_to").withStyle(ChatFormatting.BLUE),
@@ -175,6 +199,14 @@ public class ModItems {
 
     public static ResourceKey<Item> getRK(Item item) {
         return BuiltInRegistries.ITEM.getResourceKey(item).get();
+    }
+
+    public static void modifyVanillaItems() {
+        DefaultItemComponentEvents.MODIFY.register(context -> {
+            context.modify(Items.TOTEM_OF_UNDYING, builder -> {
+                builder.set(DataComponents.EQUIPPABLE, Equippable.builder(EquipmentSlot.RBFIXED_NECK).build());
+            });
+        });
     }
 
     public static void registerItems() {

@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -45,10 +44,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.VOID_ANVIL);
                     }).build());
 
-    public static final CreativeModeTab MORE_TOOLS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
-            RedBandnaSFixed.id("more_tools"),
+    public static final CreativeModeTab MORE_EQUIPMENT_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            RedBandnaSFixed.id("more_equipment"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.Trowel))
-                    .title(Component.translatable("creativemodetab.rbfixed.more_tools"))
+                    .title(Component.translatable("creativemodetab.rbfixed.more_equipment"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.Trowel);
                         ModItems.PAINT_BRUSH.forEach(output::accept);
@@ -69,9 +68,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROSE_QUARTZ_LEGGINGS);
                         output.accept(ModItems.ROSE_QUARTZ_BOOTS);
                         output.accept(ModItems.ROSE_QUARTZ_HORSE_ARMOR);
+                        output.accept(ModItems.LEATHER_BRACERS);
+                        output.accept(ModItems.COPPER_BRACERS);
+                        output.accept(ModItems.CHAINMAIL_BRACERS);
+                        output.accept(ModItems.IRON_BRACERS);
+                        output.accept(ModItems.GOLDEN_BRACERS);
+                        output.accept(ModItems.DIAMOND_BRACERS);
+                        output.accept(ModItems.ROSE_QUARTZ_BRACERS);
+                        output.accept(ModItems.NETHERITE_BRACERS);
                     }).build());
 
-    public static final CreativeModeTab UPGRADE_TEMPLATES = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+    public static final CreativeModeTab UPGRADE_TEMPLATES_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             RedBandnaSFixed.id("upgrade_templates"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE))
                     .title(Component.translatable("creativemodetab.rbfixed.upgrade_templates"))
@@ -109,6 +116,7 @@ public class ModCreativeModeTabs {
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.NETHER_FORGE))
                     .title(Component.translatable("creativemodetab.rbfixed.more_blocks"))
                     .displayItems((parameters, output) -> {
+                        output.accept(ModBlocks.CORRUPTED_BEACON);
                         output.accept(ModBlocks.NETHER_FORGE);
                         output.accept(ModBlocks.VOID_ANVIL);
                     }).build());

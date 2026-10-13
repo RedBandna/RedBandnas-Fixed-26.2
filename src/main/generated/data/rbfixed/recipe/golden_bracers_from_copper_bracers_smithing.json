@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:gold_ingot",
+  "addition_count": 2,
+  "base": "rbfixed:copper_bracers",
+  "result": {
+    "id": "rbfixed:golden_bracers"
+  },
+  "template": "rbfixed:golden_upgrade_smithing_template"
+}

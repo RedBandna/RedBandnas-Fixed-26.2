@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:iron_chain",
+  "addition_count": 2,
+  "base": "rbfixed:leather_bracers",
+  "result": {
+    "id": "rbfixed:chainmail_bracers"
+  },
+  "template": "rbfixed:chainmail_upgrade_smithing_template"
+}

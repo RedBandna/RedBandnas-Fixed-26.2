@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "# #"
+  ],
+  "result": {
+    "id": "rbfixed:iron_bracers"
+  }
+}

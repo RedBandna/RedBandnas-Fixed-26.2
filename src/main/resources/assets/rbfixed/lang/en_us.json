@@ -31,6 +31,15 @@
   "item.rbfixed.rose_quartz_boots": "Rose Quartz Boots",
   "item.rbfixed.rose_quartz_horse_armor": "Rose Quartz Horse Armor",
 
+  "item.rbfixed.leather_bracers": "Leather Bracers",
+  "item.rbfixed.copper_bracers": "Copper Bracers",
+  "item.rbfixed.chainmail_bracers": "Chainmail Bracers",
+  "item.rbfixed.iron_bracers": "Iron Bracers",
+  "item.rbfixed.golden_bracers": "Golden Bracers",
+  "item.rbfixed.diamond_bracers": "Diamond Bracers",
+  "item.rbfixed.rose_quartz_bracers": "Rose Quartz Bracers",
+  "item.rbfixed.netherite_bracers": "Netherite Bracers",
+
   "item.rbfixed.stone_upgrade_smithing_template": "Stone Upgrade Smithing Template",
   "item.rbfixed.copper_upgrade_smithing_template": "Copper Upgrade Smithing Template",
   "item.rbfixed.chainmail_upgrade_smithing_template": "Chainmail Upgrade Smithing Template",
@@ -97,6 +106,7 @@
   "block.rbfixed.void_redstone_button": "Void Redstone Button",
   "block.rbfixed.nether_forge": "Nether Forge",
   "block.rbfixed.void_anvil": "Void Anvil",
+  "block.rbfixed.corrupted_beacon": "Corrupted Beacon",
 
   "effect.rbfixed.syphoned": "Syphoned",
   "effect.rbfixed.syphoned.description": "Causes you to lose maximum health over time",
@@ -105,7 +115,7 @@
 
   "creativemodetab.rbfixed.end_items": "End Items",
   "creativemodetab.rbfixed.end_blocks": "End Blocks",
-  "creativemodetab.rbfixed.more_tools": "More Tools",
+  "creativemodetab.rbfixed.more_equipment": "More Equipment",
   "creativemodetab.rbfixed.upgrade_templates": "Upgrade Templates",
   "creativemodetab.rbfixed.more_blocks": "More Blocks",
 

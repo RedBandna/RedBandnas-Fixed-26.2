@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:red_nether_bricks",
+    "C": "rbfixed:corrupted_beacon",
+    "N": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    "NNN",
+    "NCN",
+    "BBB"
+  ],
+  "result": {
+    "id": "rbfixed:nether_forge"
+  }
+}
