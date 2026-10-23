@@ -8,19 +8,24 @@ import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.recipes.*;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.CookingBookCategory;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.redbandna.fixed.RedBandnaSFixed;
 import net.redbandna.fixed.block.ModBlocks;
-import net.redbandna.fixed.item.ModItems;
 import net.redbandna.fixed.extension.crafting.SmithingTransformRecipeBuilderExtension;
+import net.redbandna.fixed.item.ModItems;
 import net.redbandna.fixed.item.custom.PaintBrushItem;
 import org.jspecify.annotations.Nullable;
 
@@ -129,6 +134,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
             private void buildEquipmentRecipes() {
 
+                shaped(RecipeCategory.COMBAT, Items.TOTEM_OF_UNDYING)
+                        .pattern("EGE")
+                        .pattern("GNG")
+                        .pattern("GSG")
+                        .define('E', ModItems.VOID_EMERALD).define('G', Items.GOLD_INGOT)
+                        .define('S', ModItems.CORRUPT_SOUL).define('N', Items.NETHER_STAR)
+                        .unlockedBy(getHasName(ModItems.CORRUPT_SOUL), has(ModItems.CORRUPT_SOUL)).save(output);
+
                 shaped(RecipeCategory.COMBAT, ModItems.FLINT_SWORD)
                         .pattern("F")
                         .pattern("F")
@@ -197,7 +210,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "spear"), materialItem, 1 + bonus, parseTieredItem(out, "spear"));
                     }
                     if (List.of("leather", "copper", "chainmail", "iron", "golden", "diamond", "rbfixed:rose_quartz").contains(base)) {
-                        RedBandnaSFixed.LOGGER.info(base + ", " + out);
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "helmet"), materialItem, 5 + bonus, parseTieredItem(out, "helmet"));
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "chestplate"), materialItem, 8 + bonus, parseTieredItem(out, "chestplate"));
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "leggings"), materialItem, 7 + bonus, parseTieredItem(out, "leggings"));
@@ -205,6 +217,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         createSmithingUpgradeRecipe(templateIngredient, parseTieredItem(base, "bracers"), materialItem, 2 + bonus, parseTieredItem(out, "bracers"));
                     }
                 });
+
+                buildPendantRecipe(ModItems.AMETHYST_PENDANT, Items.AMETHYST_SHARD);
+                buildPendantRecipe(ModItems.COAL_PENDANT, Items.COAL);
+                buildPendantRecipe(ModItems.COPPER_PENDANT, Items.COPPER_INGOT);
+                buildPendantRecipe(ModItems.DIAMOND_PENDANT, Items.DIAMOND);
+                buildPendantRecipe(ModItems.EMERALD_PENDANT, Items.EMERALD);
+                buildPendantRecipe(ModItems.GOLD_PENDANT, Items.GOLD_INGOT);
+                buildPendantRecipe(ModItems.ICE_PENDANT, Items.BLUE_ICE);
+                buildPendantRecipe(ModItems.IRON_PENDANT, Items.IRON_INGOT);
+                buildPendantRecipe(ModItems.LAPIS_PENDANT, Items.LAPIS_LAZULI);
+                buildPendantRecipe(ModItems.NETHERITE_PENDANT, Items.NETHERITE_SCRAP);
+                buildPendantRecipe(ModItems.QUARTZ_PENDANT, Items.QUARTZ);
+                buildPendantRecipe(ModItems.REDSTONE_PENDANT, Items.REDSTONE);
+                buildPendantRecipe(ModItems.RESIN_PENDANT, Items.RESIN_BRICK);
+                buildPendantRecipe(ModItems.SLIME_PENDANT, Items.SLIME_BALL);
+                buildPendantRecipe(ModItems.VOID_AMETHYST_PENDANT, ModItems.VOID_AMETHYST_SHARD, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_COAL_PENDANT, ModItems.VOID_COAL, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_COPPER_PENDANT, ModItems.VOID_COPPER_INGOT, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_DIAMOND_PENDANT, ModItems.VOID_DIAMOND, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_EMERALD_PENDANT, ModItems.VOID_EMERALD, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_GOLD_PENDANT, ModItems.VOID_GOLD_INGOT, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_IRON_PENDANT, ModItems.VOID_IRON_INGOT, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_LAPIS_PENDANT, ModItems.VOID_LAPIS_LAZULI, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_NETHERITE_PENDANT, ModItems.VOID_NETHERITE_SCRAP, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_QUARTZ_PENDANT, ModItems.VOID_QUARTZ, ModItems.CORRUPT_SOUL);
+                buildPendantRecipe(ModItems.VOID_REDSTONE_PENDANT, ModItems.VOID_REDSTONE, ModItems.CORRUPT_SOUL);
             }
 
             private void buildForgingTemplates() {
@@ -413,6 +451,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.PURE_VOID_ESSENCE), has(ModItems.PURE_VOID_ESSENCE))
                         .group("void_minerals")
                         .save(output);
+            }
+
+            private void buildPendantRecipe(Item pendant, ItemLike material) {
+                shaped(RecipeCategory.MISC, pendant)
+                        .pattern(" C ")
+                        .pattern("C C")
+                        .pattern(" # ")
+                        .define('C', Items.IRON_CHAIN).define('#', material)
+                        .unlockedBy(getHasName(material), has(material)).save(output);
+            }
+
+            private void buildPendantRecipe(Item pendant, ItemLike material, ItemLike center) {
+                shaped(RecipeCategory.MISC, pendant)
+                        .pattern(" C ")
+                        .pattern("CSC")
+                        .pattern(" # ")
+                        .define('C', Items.IRON_CHAIN).define('#', material).define('S', center)
+                        .unlockedBy(getHasName(material), has(material)).save(output);
             }
         };
     }

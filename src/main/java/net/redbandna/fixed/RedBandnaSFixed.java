@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.commands.synchronization.SingletonArgumentInfo;
 import net.minecraft.resources.Identifier;
 
@@ -17,6 +18,8 @@ import net.redbandna.fixed.data.ModDataComponents;
 import net.redbandna.fixed.effect.ModEffects;
 import net.redbandna.fixed.item.ModItems;
 import net.redbandna.fixed.item.forging.ModForgePatterns;
+import net.redbandna.fixed.loot.ModLootFunctions;
+import net.redbandna.fixed.loot.ModLootTableModifiers;
 import net.redbandna.fixed.menu.ModMenuTypes;
 import net.redbandna.fixed.worldgen.custom.ModFeatures;
 import net.redbandna.fixed.worldgen.gen.ModWorldGeneration;
@@ -42,6 +45,10 @@ public class RedBandnaSFixed implements ModInitializer {
 		ModMenuTypes.registerMenuTypes();
 		ModFeatures.registerFeatures();
 		ModWorldGeneration.generateWorldGen();
+		ModLootFunctions.registerFunctions();
+
+		LootTableEvents.MODIFY.register(ModLootTableModifiers::modifyLootTables);
+		LootTableEvents.REPLACE.register(ModLootTableModifiers::replaceLootTables);
 
 		ArgumentTypeRegistry.registerArgumentType(id("forge_template"), ForgeTemplateArgument.class, SingletonArgumentInfo.contextFree(ForgeTemplateArgument::new));
 		CommandRegistrationCallback.EVENT.register((dispatcher, context, environment) -> {

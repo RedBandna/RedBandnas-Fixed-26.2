@@ -9,6 +9,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -53,6 +54,9 @@ public abstract class LivingEntityMixin extends Entity {
     @Shadow
     public abstract void setHealth(float health);
 
+    @Shadow
+    public abstract void dealDefaultKnockback(DamageSource source, float damage, boolean blocked);
+
     @Inject(method = "hurtServer", at = @At(value = "TAIL"))
     protected void applyModHurting(ServerLevel level, DamageSource source, float damage, CallbackInfoReturnable<Boolean> cir) {
         if (source.getEntity() instanceof Creaking) {
@@ -66,11 +70,14 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
     @ModifyVariable(method = "hurtServer", at = @At(value = "HEAD"), argsOnly = true, name = "damage")
-    public float multiplyFirstHit(float damage, @Local(argsOnly = true, name = "source") DamageSource source) {
+    public float scaleHit(float damage, @Local(argsOnly = true, name = "source") DamageSource source) {
 
         if (source.getEntity() == null) return damage;
         ItemStack weaponItem = source.getEntity().getWeaponItem();
         if (weaponItem == null) return damage;
+
+        if (weaponItem.has(ModDataComponents.NO_DAMAGE)) return 0;
+
         List<String> excludes = weaponItem.get(ModDataComponents.FIRST_HIT_BONUS_EXCLUDES);
         if (excludes == null || excludes.contains(stringUUID)) return damage;
 
@@ -78,6 +85,16 @@ public abstract class LivingEntityMixin extends Entity {
         added.add(stringUUID);
         weaponItem.set(ModDataComponents.FIRST_HIT_BONUS_EXCLUDES, added);
         return damage * 1.3F;
+    }
+
+    @Inject(method = "hurtServer", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;resolveMobResponsibleForDamage(Lnet/minecraft/world/damagesource/DamageSource;)V"), cancellable = true)
+    public void noHurtIfNoHurt(ServerLevel level, DamageSource source, float damage, CallbackInfoReturnable<Boolean> cir, @Local(name = "blocked") boolean blocked) {
+        if (damage <= 0f) {
+            if (!source.is(DamageTypeTags.NO_KNOCKBACK)) {
+                dealDefaultKnockback(source, damage, blocked);
+            }
+            cir.cancel();
+        }
     }
 
     @Inject(method = "tickEffects", at = @At(value = "HEAD"))

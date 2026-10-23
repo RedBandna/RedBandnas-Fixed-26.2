@@ -2,7 +2,9 @@ package net.redbandna.fixed.item;
 
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -10,21 +12,28 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Unit;
 import net.minecraft.util.Util;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.equipment.ArmorMaterials;
-import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.item.equipment.Equippable;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.equipment.*;
 import net.minecraft.world.level.block.ColorCollection;
 import net.redbandna.fixed.RedBandnaSFixed;
+import net.redbandna.fixed.data.ModDataComponents;
 import net.redbandna.fixed.item.custom.ForgeTemplateItem;
 import net.redbandna.fixed.item.custom.ModArmorMaterials;
 import net.redbandna.fixed.item.custom.PaintBrushItem;
 import net.redbandna.fixed.item.custom.TrowelItem;
 import net.redbandna.fixed.item.forging.ModForgePatterns;
+import org.apache.commons.lang3.text.WordUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -52,17 +61,19 @@ public class ModItems {
     public static final ColorCollection<Item> PAINT_BRUSH = ColorCollection.registerItems(
             ColorCollection.prefixWithColor(ColorCollection.create("paint_brush")), (name, color) -> registerDyedItem(name, color, PaintBrushItem::new));
 
-    public static final Item FLINT_SWORD = registerItem("flint_sword",
+    public static final Item CORRUPT_SOUL = registerItem("corrupt_soul", Item::new);
+
+    public static final Item FLINT_SWORD = registerShortItem("flint_sword",
             properties -> new Item(properties.sword(ModToolMaterials.FLINT, 3, -2.4f)));
-    public static final Item FLINT_PICKAXE = registerItem("flint_pickaxe",
+    public static final Item FLINT_PICKAXE = registerShortItem("flint_pickaxe",
             properties -> new Item(properties.pickaxe(ModToolMaterials.FLINT, 1, -2.8f)));
-    public static final Item FLINT_SHOVEL = registerItem("flint_shovel",
+    public static final Item FLINT_SHOVEL = registerShortItem("flint_shovel",
             properties -> new ShovelItem(ModToolMaterials.FLINT, 1.5f, -3.0f, properties));
-    public static final Item FLINT_AXE = registerItem("flint_axe",
+    public static final Item FLINT_AXE = registerShortItem("flint_axe",
             properties -> new AxeItem(ModToolMaterials.FLINT, 6, -3.2f, properties));
-    public static final Item FLINT_HOE = registerItem("flint_hoe",
+    public static final Item FLINT_HOE = registerShortItem("flint_hoe",
             properties -> new HoeItem(ModToolMaterials.FLINT, 0, -3.0f, properties));
-    public static final Item FLINT_SPEAR = registerItem("flint_spear",
+    public static final Item FLINT_SPEAR = registerShortItem("flint_spear",
             properties -> new Item(properties.spear(ModToolMaterials.FLINT, 0.65f, 0.7f, 0.75f,
                     5.0f, 14.0f, 10.0f, 5.1f, 15.0f, 4.6f)));
 
@@ -98,6 +109,34 @@ public class ModItems {
     public static final Item DIAMOND_BRACERS = registerBracerItem("diamond_bracers", ArmorMaterials.DIAMOND);
     public static final Item ROSE_QUARTZ_BRACERS = registerBracerItem("rose_quartz_bracers", ModArmorMaterials.ROSE_QUARTZ);
     public static final Item NETHERITE_BRACERS = registerBracerItem("netherite_bracers", ArmorMaterials.NETHERITE);
+
+    public static ArrayList<Item> PENDANTS = new ArrayList<>();
+    public static final Item AMETHYST_PENDANT = registerPendantItem("amethyst", Attributes.ENTITY_INTERACTION_RANGE, 0.5f);
+    public static final Item COAL_PENDANT = registerPendantItem("coal", Attributes.KNOCKBACK_RESISTANCE, 0.2f);
+    public static final Item COPPER_PENDANT = registerPendantItem("copper", Attributes.WATER_MOVEMENT_EFFICIENCY, 0.2f);
+    public static final Item DIAMOND_PENDANT = registerPendantItem("diamond", Attributes.ATTACK_SPEED, 0.1f);
+    public static final Item EMERALD_PENDANT = registerPendantItem("emerald", Attributes.LUCK, 0.5f);
+    public static final Item GOLD_PENDANT = registerPendantItem("gold", Attributes.TEMPT_RANGE, 1f);
+    public static final Item ICE_PENDANT = registerPendantItem("ice", Attributes.FRICTION_MODIFIER, -0.2f);
+    public static final Item IRON_PENDANT = registerPendantItem("iron", Attributes.STEP_HEIGHT, 0.5f);
+    public static final Item LAPIS_PENDANT = registerPendantItem("lapis", Attributes.MAX_ABSORPTION, 1f);
+    public static final Item NETHERITE_PENDANT = registerPendantItem("netherite", Attributes.ARMOR_TOUGHNESS, 1f);
+    public static final Item QUARTZ_PENDANT = registerPendantItem("quartz", Attributes.MINING_EFFICIENCY, 1f);
+    public static final Item REDSTONE_PENDANT = registerPendantItem("redstone", Attributes.BLOCK_INTERACTION_RANGE, 0.5f);
+    public static final Item RESIN_PENDANT = registerPendantItem("resin", Attributes.FRICTION_MODIFIER, 0.5f);
+    public static final Item SLIME_PENDANT = registerPendantItem("slime", Attributes.BOUNCINESS, 0.5f);
+
+    public static final Item VOID_AMETHYST_PENDANT = registerPendantItem("void_amethyst", Attributes.ENTITY_INTERACTION_RANGE, 1f);
+    public static final Item VOID_COAL_PENDANT = registerPendantItem("void_coal", Attributes.KNOCKBACK_RESISTANCE, 0.5f);
+    public static final Item VOID_COPPER_PENDANT = registerPendantItem("void_copper", Attributes.WATER_MOVEMENT_EFFICIENCY, 0.5f);
+    public static final Item VOID_DIAMOND_PENDANT = registerPendantItem("void_diamond", Attributes.ATTACK_SPEED, 0.5f);
+    public static final Item VOID_EMERALD_PENDANT = registerPendantItem("void_emerald", Attributes.LUCK, 1.5f);
+    public static final Item VOID_GOLD_PENDANT = registerPendantItem("void_gold", Attributes.TEMPT_RANGE, 5f);
+    public static final Item VOID_IRON_PENDANT = registerPendantItem("void_iron", Attributes.JUMP_STRENGTH, 1f);
+    public static final Item VOID_LAPIS_PENDANT = registerPendantItem("void_lapis", Attributes.MAX_ABSORPTION, 4f);
+    public static final Item VOID_NETHERITE_PENDANT = registerPendantItem("void_netherite", Attributes.ARMOR_TOUGHNESS, 4f);
+    public static final Item VOID_QUARTZ_PENDANT = registerPendantItem("void_quartz", Attributes.MINING_EFFICIENCY, 6f);
+    public static final Item VOID_REDSTONE_PENDANT = registerPendantItem("void_redstone", Attributes.BLOCK_INTERACTION_RANGE, 1f);
 
     public static final Item STONE_UPGRADE_SMITHING_TEMPLATE = registerItem("stone_upgrade_smithing_template",
             properties -> createUpgradeTemplate(properties.rarity(Rarity.COMMON), "stone", true, false));
@@ -162,6 +201,17 @@ public class ModItems {
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, RedBandnaSFixed.id(name)))));
     }
 
+    private static Item registerShortItem(String name, Function<Item.Properties, Item> function) {
+        return Registry.register(BuiltInRegistries.ITEM, RedBandnaSFixed.id(name),
+                function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, RedBandnaSFixed.id(name)))
+                        .attributes(ItemAttributeModifiers.builder()
+                                .add(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(
+                                        RedBandnaSFixed.id(name + "_base"), -0.5f, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                                .add(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(
+                                        RedBandnaSFixed.id(name + "_base"), -0.5f, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                                .build())));
+    }
+
     private static Item registerDyedItem(String name, DyeColor color, BiFunction<Item.Properties, DyeColor, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, RedBandnaSFixed.id(name),
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, RedBandnaSFixed.id(name))), color));
@@ -172,6 +222,13 @@ public class ModItems {
                 .component(DataComponents.EQUIPPABLE, Equippable.builder(EquipmentSlot.RBFIXED_ARMS).setEquipSound(material.equipSound()).setAsset(material.assetId()).build())
                 .repairable(material.repairIngredient())
         ));
+    }
+
+    private static Item registerPendantItem(String name, Holder<Attribute> attribute, float value) {
+        PENDANTS.add(registerItem(name + "_pendant", properties -> new Item(properties.stacksTo(1).attributes(ItemAttributeModifiers.builder()
+                        .add(attribute, new AttributeModifier(RedBandnaSFixed.id("pendant_base_modifier"), value, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.RBFIXED_NECK).build())
+                .component(DataComponents.EQUIPPABLE, Equippable.builder(EquipmentSlot.RBFIXED_NECK).setEquipSound(SoundEvents.ARMOR_EQUIP_CHAIN).build()))));
+        return PENDANTS.getLast();
     }
 
     private static SmithingTemplateItem createUpgradeTemplate (Item.Properties properties, String tier, boolean tool, boolean armor) {
@@ -205,6 +262,12 @@ public class ModItems {
         DefaultItemComponentEvents.MODIFY.register(context -> {
             context.modify(Items.TOTEM_OF_UNDYING, builder -> {
                 builder.set(DataComponents.EQUIPPABLE, Equippable.builder(EquipmentSlot.RBFIXED_NECK).build());
+            });
+        });
+
+        DefaultItemComponentEvents.MODIFY.register(context -> {
+            context.modify(Items.FEATHER, builder -> {
+                builder.set(ModDataComponents.NO_DAMAGE, Unit.INSTANCE);
             });
         });
     }

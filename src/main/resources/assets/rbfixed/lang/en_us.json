@@ -12,6 +12,7 @@
   "item.rbfixed.void_netherite_scrap": "Void Netherite Scrap",
   "item.rbfixed.void_quartz": "Void Quartz",
   "item.rbfixed.void_redstone": "Void Redstone",
+  "item.rbfixed.corrupt_soul": "Corrupt Soul",
 
   "item.rbfixed.flint_sword": "Flint Sword",
   "item.rbfixed.flint_pickaxe": "Flint Pickaxe",
@@ -39,6 +40,32 @@
   "item.rbfixed.diamond_bracers": "Diamond Bracers",
   "item.rbfixed.rose_quartz_bracers": "Rose Quartz Bracers",
   "item.rbfixed.netherite_bracers": "Netherite Bracers",
+
+  "item.rbfixed.amethyst_pendant": "Amethyst Pendant",
+  "item.rbfixed.coal_pendant": "Coal Pendant",
+  "item.rbfixed.copper_pendant": "Copper Pendant",
+  "item.rbfixed.diamond_pendant": "Diamond Pendant",
+  "item.rbfixed.emerald_pendant": "Emerald Pendant",
+  "item.rbfixed.gold_pendant": "Gold Pendant",
+  "item.rbfixed.ice_pendant": "Ice Pendant",
+  "item.rbfixed.iron_pendant": "Iron Pendant",
+  "item.rbfixed.lapis_pendant": "Lapis Pendant",
+  "item.rbfixed.netherite_pendant": "Netherite Pendant",
+  "item.rbfixed.quartz_pendant": "Quartz Pendant",
+  "item.rbfixed.redstone_pendant": "Redstone Pendant",
+  "item.rbfixed.resin_pendant": "Resin Pendant",
+  "item.rbfixed.slime_pendant": "Slime Pendant",
+  "item.rbfixed.void_amethyst_pendant": "Void Amethyst Pendant",
+  "item.rbfixed.void_coal_pendant": "Void Coal Pendant",
+  "item.rbfixed.void_copper_pendant": "Void Copper Pendant",
+  "item.rbfixed.void_diamond_pendant": "Void Diamond Pendant",
+  "item.rbfixed.void_emerald_pendant": "Void Emerald Pendant",
+  "item.rbfixed.void_gold_pendant": "Void Gold Pendant",
+  "item.rbfixed.void_iron_pendant": "Void Iron Pendant",
+  "item.rbfixed.void_lapis_pendant": "Void Lapis Pendant",
+  "item.rbfixed.void_netherite_pendant": "Void Netherite Pendant",
+  "item.rbfixed.void_quartz_pendant": "Void Quartz Pendant",
+  "item.rbfixed.void_redstone_pendant": "Void Redstone Pendant",
 
   "item.rbfixed.stone_upgrade_smithing_template": "Stone Upgrade Smithing Template",
   "item.rbfixed.copper_upgrade_smithing_template": "Copper Upgrade Smithing Template",
@@ -115,9 +142,20 @@
 
   "creativemodetab.rbfixed.end_items": "End Items",
   "creativemodetab.rbfixed.end_blocks": "End Blocks",
+  "creativemodetab.rbfixed.more_materials": "More Materials",
   "creativemodetab.rbfixed.more_equipment": "More Equipment",
   "creativemodetab.rbfixed.upgrade_templates": "Upgrade Templates",
   "creativemodetab.rbfixed.more_blocks": "More Blocks",
+
+  "tag.block.rbfixed.void_buttons": "Void Buttons",
+  "tag.block.rbfixed.incorrect_for_flint_tool": "Incorrect For Flint Tool",
+  "tag.block.rbfixed.correct_for_rose_quartz_tool": "Correct For Rose Quartz Tool",
+  "tag.block.rbfixed.incorrect_for_rose_quartz_tool": "Incorrect For Rose Quartz Tool",
+  "tag.item.rbfixed.void_minerals": "Void Minerals",
+  "tag.item.rbfixed.flint_repair": "Flint Repair",
+  "tag.item.rbfixed.rose_quartz_repair": "Rose Quartz Repair",
+  "tag.item.rbfixed.bracer_enchantable": "Bracer Enchantable",
+  "tag.item.rbfixed.forge_fuel_items": "Forge Fuel Items",
 
   "item.rbfixed.smithing_template.stone_upgrade.applies_to": "Flint Tools, Wooden Tools",
   "item.rbfixed.smithing_template.stone_upgrade.ingredients": "Cobblestone",
@@ -155,9 +193,11 @@
 
   "container.rbfixed.nether_forge": "Nether Forge",
   "container.forge": "Forge & Name",
+
   "commands.forge.failed": "Nothing changed. Targets either have no item in their hands or the forge pattern could not be applied",
   "commands.forge.success.single": "Applied Forge Pattern to",
   "commands.forge.success": "Applied Forge patterns",
+
   "item.forging_template.applies_to": "Applies to:",
   "item.forging_template.enchantable.durability": "All Equipment",
   "item.forging_template.enchantable.mining": "Tools",
@@ -168,6 +208,10 @@
   "item.forging_template.enchantable.trident": "Tridents",
   "item.forging_template.enchantable.fishing": "Fishing Rods",
   "item.forging_template.enchantable.foot_armor": "Boots",
-  "item.forging_template": "Forging Template"
+  "item.forging_template": "Forging Template",
 
+  "item.modifiers.neck": "When on Neck:",
+  "item.modifiers.back": "When on Back:",
+  "item.modifiers.arms": "When on Arms:",
+  "item.modifiers.belt": "When on Belt:"
 }

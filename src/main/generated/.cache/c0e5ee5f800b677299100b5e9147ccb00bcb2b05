@@ -8,7 +8,9 @@ bec5b7121204da21acb6f7974205d7f7d9cb036b data/minecraft/tags/item/foot_armor.jso
 18c8f6cd3bd14ca6616b19c8a5538e23695a9929 data/minecraft/tags/item/head_armor.json
 9e2789c08cf35438838324e678857ba68aa2041d data/minecraft/tags/item/hoes.json
 b2361c58ef5b504c3f419aebf9190a3203296e21 data/minecraft/tags/item/leg_armor.json
+fad93c457117e4dd6e7df0149a471cd258a3242e data/minecraft/tags/item/netherite_tool_materials.json
 247c20680217106e75185072a01abf7c7b57568f data/minecraft/tags/item/pickaxes.json
+fad93c457117e4dd6e7df0149a471cd258a3242e data/minecraft/tags/item/repairs_netherite_armor.json
 ae848d3d5d20cdd5f8c18933ce97bc52216c12a1 data/minecraft/tags/item/shovels.json
 29f30550eb1795e66b527734f294a7f5b830a316 data/minecraft/tags/item/spears.json
 88925c2a6b6e5e9d34cb4f96816d50741c47a202 data/minecraft/tags/item/swords.json

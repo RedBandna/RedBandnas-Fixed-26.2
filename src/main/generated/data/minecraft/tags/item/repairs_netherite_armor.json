@@ -1,0 +1,8 @@
+{
+  "fabric:remove": [
+    "minecraft:netherite_ingot"
+  ],
+  "values": [
+    "minecraft:netherite_scrap"
+  ]
+}

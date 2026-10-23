@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "rbfixed:void_netherite_scrap",
+    "C": "minecraft:iron_chain",
+    "S": "rbfixed:corrupt_soul"
+  },
+  "pattern": [
+    " C ",
+    "CSC",
+    " # "
+  ],
+  "result": {
+    "id": "rbfixed:void_netherite_pendant"
+  }
+}

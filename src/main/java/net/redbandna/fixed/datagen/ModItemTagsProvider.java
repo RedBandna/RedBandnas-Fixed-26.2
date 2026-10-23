@@ -44,6 +44,8 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
 
         tag(ModTags.Items.FLINT_REPAIR).add(ItemIds.FLINT);
         tag(ModTags.Items.ROSE_QUARTZ_REPAIR).add(ModItems.getRK(ModItems.VOID_QUARTZ));
+        tag(ItemTags.REPAIRS_NETHERITE_ARMOR).remove(ItemIds.NETHERITE_INGOT).add(ItemIds.NETHERITE_SCRAP);
+        tag(ItemTags.NETHERITE_TOOL_MATERIALS).remove(ItemIds.NETHERITE_INGOT).add(ItemIds.NETHERITE_SCRAP);
 
         tag(ModTags.Items.BRACER_ENCHANTABLE)
                 .add(ModItems.getRK(ModItems.LEATHER_BRACERS))

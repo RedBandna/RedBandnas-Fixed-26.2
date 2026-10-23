@@ -20,6 +20,8 @@ import net.redbandna.fixed.block.ModBlocks;
 import net.redbandna.fixed.item.ModItems;
 import net.redbandna.fixed.item.custom.ModArmorMaterials;
 
+import java.util.function.Consumer;
+
 public class ModModelProvider extends FabricModelProvider {
 
     public ModModelProvider(FabricPackOutput output) {
@@ -63,69 +65,72 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
 
-        itemModelGenerators.generateFlatItem(ModItems.VOID_ESSENCE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PURE_VOID_ESSENCE, ModelTemplates.FLAT_ITEM);
-        for (Item mineral : ModItems.VOID_MINERALS)
-            itemModelGenerators.generateFlatItem(mineral, ModelTemplates.FLAT_ITEM);
+        Consumer<Item> flat = item -> { itemModelGenerators.generateFlatItem(item, ModelTemplates.FLAT_ITEM); };
+        Consumer<Item> handheld = item -> { itemModelGenerators.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM); };
 
-        itemModelGenerators.generateFlatItem(ModItems.Trowel, ModelTemplates.FLAT_HANDHELD_ITEM);
-        ModItems.PAINT_BRUSH.forEach(paint_brush -> {
-            itemModelGenerators.generateFlatItem(paint_brush, ModelTemplates.FLAT_HANDHELD_ITEM);
-        });
+        flat.accept(ModItems.VOID_ESSENCE);
+        flat.accept(ModItems.PURE_VOID_ESSENCE);
+        ModItems.VOID_MINERALS.forEach(flat);
+        flat.accept(ModItems.CORRUPT_SOUL);
 
-        itemModelGenerators.generateFlatItem(ModItems.FLINT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.FLINT_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.FLINT_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.FLINT_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.FLINT_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        handheld.accept(ModItems.Trowel);
+        ModItems.PAINT_BRUSH.forEach(handheld);
+
+        handheld.accept(ModItems.FLINT_SWORD);
+        handheld.accept(ModItems.FLINT_PICKAXE);
+        handheld.accept(ModItems.FLINT_SHOVEL);
+        handheld.accept(ModItems.FLINT_AXE);
+        handheld.accept(ModItems.FLINT_HOE);
         itemModelGenerators.generateSpear(ModItems.FLINT_SPEAR);
 
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        handheld.accept(ModItems.ROSE_QUARTZ_SWORD);
+        handheld.accept(ModItems.ROSE_QUARTZ_PICKAXE);
+        handheld.accept(ModItems.ROSE_QUARTZ_SHOVEL);
+        handheld.accept(ModItems.ROSE_QUARTZ_AXE);
+        handheld.accept(ModItems.ROSE_QUARTZ_HOE);
         itemModelGenerators.generateSpear(ModItems.ROSE_QUARTZ_SPEAR);
         itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_HELMET, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
         itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_CHESTPLATE, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
         itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_LEGGINGS, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
         itemModelGenerators.generateTrimmableItem(ModItems.ROSE_QUARTZ_BOOTS, ModArmorMaterials.ROSE_QUARTZ_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_HORSE_ARMOR, ModelTemplates.FLAT_HANDHELD_ITEM);
+        handheld.accept(ModItems.ROSE_QUARTZ_HORSE_ARMOR);
 
-        itemModelGenerators.generateFlatItem(ModItems.LEATHER_BRACERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.COPPER_BRACERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.CHAINMAIL_BRACERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.IRON_BRACERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.GOLDEN_BRACERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.DIAMOND_BRACERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_BRACERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.NETHERITE_BRACERS, ModelTemplates.FLAT_ITEM);
+        flat.accept(ModItems.LEATHER_BRACERS);
+        flat.accept(ModItems.COPPER_BRACERS);
+        flat.accept(ModItems.CHAINMAIL_BRACERS);
+        flat.accept(ModItems.IRON_BRACERS);
+        flat.accept(ModItems.GOLDEN_BRACERS);
+        flat.accept(ModItems.DIAMOND_BRACERS);
+        flat.accept(ModItems.ROSE_QUARTZ_BRACERS);
+        flat.accept(ModItems.NETHERITE_BRACERS);
 
-        itemModelGenerators.generateFlatItem(ModItems.STONE_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.COPPER_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.CHAINMAIL_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.IRON_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.GOLDEN_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        ModItems.PENDANTS.forEach(flat);
 
-        itemModelGenerators.generateFlatItem(ModItems.SHORT_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.DULL_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.BRITTLE_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.IMPRECISE_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.PRECISE_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.HEAVY_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.LIGHT_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.GIANT_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.DWARF_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.DURABLE_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.SWIFT_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.LONG_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.LUCKY_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.SYPHONING_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.POISONING_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.WITHERING_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.CATALYTIC_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.UNDERESTIMATED_FORGING_TEMPLATE, ModelTemplates.FLAT_ITEM);
+        flat.accept(ModItems.STONE_UPGRADE_SMITHING_TEMPLATE);
+        flat.accept(ModItems.COPPER_UPGRADE_SMITHING_TEMPLATE);
+        flat.accept(ModItems.CHAINMAIL_UPGRADE_SMITHING_TEMPLATE);
+        flat.accept(ModItems.IRON_UPGRADE_SMITHING_TEMPLATE);
+        flat.accept(ModItems.GOLDEN_UPGRADE_SMITHING_TEMPLATE);
+        flat.accept(ModItems.DIAMOND_UPGRADE_SMITHING_TEMPLATE);
+        flat.accept(ModItems.ROSE_QUARTZ_UPGRADE_SMITHING_TEMPLATE);
+
+        flat.accept(ModItems.SHORT_FORGING_TEMPLATE);
+        flat.accept(ModItems.DULL_FORGING_TEMPLATE);
+        flat.accept(ModItems.BRITTLE_FORGING_TEMPLATE);
+        flat.accept(ModItems.IMPRECISE_FORGING_TEMPLATE);
+        flat.accept(ModItems.PRECISE_FORGING_TEMPLATE);
+        flat.accept(ModItems.HEAVY_FORGING_TEMPLATE);
+        flat.accept(ModItems.LIGHT_FORGING_TEMPLATE);
+        flat.accept(ModItems.GIANT_FORGING_TEMPLATE);
+        flat.accept(ModItems.DWARF_FORGING_TEMPLATE);
+        flat.accept(ModItems.DURABLE_FORGING_TEMPLATE);
+        flat.accept(ModItems.SWIFT_FORGING_TEMPLATE);
+        flat.accept(ModItems.LONG_FORGING_TEMPLATE);
+        flat.accept(ModItems.LUCKY_FORGING_TEMPLATE);
+        flat.accept(ModItems.SYPHONING_FORGING_TEMPLATE);
+        flat.accept(ModItems.POISONING_FORGING_TEMPLATE);
+        flat.accept(ModItems.WITHERING_FORGING_TEMPLATE);
+        flat.accept(ModItems.CATALYTIC_FORGING_TEMPLATE);
+        flat.accept(ModItems.UNDERESTIMATED_FORGING_TEMPLATE);
     }
 }

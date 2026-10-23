@@ -44,6 +44,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.VOID_ANVIL);
                     }).build());
 
+    public static final CreativeModeTab MORE_MATERIALS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            RedBandnaSFixed.id("more_materials"),
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CORRUPT_SOUL))
+                    .title(Component.translatable("creativemodetab.rbfixed.more_materials"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.CORRUPT_SOUL);
+                    }).build());
+
     public static final CreativeModeTab MORE_EQUIPMENT_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             RedBandnaSFixed.id("more_equipment"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.Trowel))
@@ -76,6 +84,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DIAMOND_BRACERS);
                         output.accept(ModItems.ROSE_QUARTZ_BRACERS);
                         output.accept(ModItems.NETHERITE_BRACERS);
+                        ModItems.PENDANTS.forEach(output::accept);
                     }).build());
 
     public static final CreativeModeTab UPGRADE_TEMPLATES_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,

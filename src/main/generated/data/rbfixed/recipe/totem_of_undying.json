@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "rbfixed:void_emerald",
+    "G": "minecraft:gold_ingot",
+    "N": "minecraft:nether_star",
+    "S": "rbfixed:corrupt_soul"
+  },
+  "pattern": [
+    "EGE",
+    "GNG",
+    "GSG"
+  ],
+  "result": {
+    "id": "minecraft:totem_of_undying"
+  }
+}
